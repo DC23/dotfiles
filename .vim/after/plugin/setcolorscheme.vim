@@ -1,5 +1,5 @@
 if has('gui_running')
-    color xoriadark
+    color solarized
 elseif has('win32') || has('win64')
     "xoriadark looks terrible in a DOS shell
     color default
