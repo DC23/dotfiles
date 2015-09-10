@@ -1,0 +1,20 @@
+--recurse=yes
+--tag-relative=yes
+--exclude=.git
+--exclude=.hg
+--exclude=.svn
+
+--langdef=IDL
+--langmap=IDL:.pro
+--regex-IDL=/^[ \t]*function[ \t]+([a-zA-Z0-9_:]+)/\1/f,function/i
+--regex-IDL=/^[ \t]*pro[ \t]+([a-zA-Z0-9_:]+)/\1/p,procedure/i
+--regex-IDL=/^[ \t]*common[ \t]+([a-zA-Z0-9_:]+)/\1/c,common/i
+
+--langdef=Markdown
+--langmap=Markdown:.md
+--regex-Markdown=/^#[ \t]+(.*)/\1/h,Heading_L1/
+--regex-Markdown=/^##[ \t]+(.*)/\1/i,Heading_L2/
+--regex-Markdown=/^###[ \t]+(.*)/\1/k,Heading_L3/
+--regex-Markdown=/^####[ \t]+(.*)/\1/f,Heading_L4/
+
+--regex-make=/^\s*([^#][^:]*):/\1/t,target/

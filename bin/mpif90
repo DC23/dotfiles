@@ -1,0 +1,16 @@
+#!/bin/bash
+ 
+# A wrapper script to change -rpath to -Wl,-rpath and -soname to -Wl,-soname.
+# (because libtool helpfully removes the "-Wl," in order to ensure incorrectness)
+# Some other linker-only options are also supported:
+# This is required for the Intel compilers. (and possibly the gnu compilers, for some options)
+ 
+ARGS=`echo $* | sed 's/\s-rpath\s/ -Wl,-rpath,/g'`
+ARGS=`echo $ARGS | sed 's/\s-soname\s/ -Wl,-soname,/g'`
+ARGS=`echo $ARGS | sed 's/\s--start-group\s/ -Wl,--start-group /g'`
+ARGS=`echo $ARGS | sed 's/\s--end-group\s/ -Wl,--end-group /g'`
+ARGS=`echo $ARGS | sed 's/\s--whole-archive\s/ -Wl,--whole-archive /g'`
+ARGS=`echo $ARGS | sed 's/\s--no-whole-archive\s/ -Wl,--no-whole-archive /g'`
+ARGS=`echo $ARGS | sed 's/\s-l/ -Wl,-l/g'`
+#${OPENMPI_ROOT}/bin/mpif90 $ARGS
+mpif90 $ARGS

@@ -1,0 +1,26 @@
+set nonumber
+
+" less typing
+nnoremap ; :
+
+" make Y consistent with D and C - yank to end of line
+nnoremap Y y$
+
+" reselect visual block after indent
+vnoremap < <gv
+vnoremap > >gv
+
+" Tab and indent settings
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set autoindent
+set smarttab
+set nowrap
+set formatoptions=qrn1
+set backspace=indent,eol,start
+
+" auto center search repeats
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz

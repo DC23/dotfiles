@@ -1,0 +1,52 @@
+#!/bin/bash
+ 
+# author: Duane Johnson
+# email: duane.johnson@gmail.com
+# date: 2008 Jun 12
+# license: MIT
+#
+# Based on discussion at http://kerneltrap.org/mailarchive/git/2007/11/12/406496
+ 
+# DC: adding some basic colourisation
+red=1
+green=2
+yellow=3
+blue=4
+orange=5
+cyan=6
+white=7
+grey=8
+
+pushd . >/dev/null
+ 
+# Find base of git directory
+while [ ! -d .git ] && [ ! `pwd` = "/" ]; do cd ..; done
+ 
+# Show various information about this git directory
+if [ -d .git ]; then
+  echo "$(tput setaf $cyan)== Status:$(tput sgr0)"
+  git status --short
+  echo
+
+  echo "$(tput setaf $cyan)== Remote URL:$(tput sgr0)"
+  git remote -v
+  echo
+ 
+  echo "$(tput setaf $cyan)== Remote Branches:$(tput sgr0)"
+  git branch -r -vv
+  echo
+ 
+  echo "$(tput setaf $cyan)== Local Branches:$(tput sgr0)"
+  git branch -vv
+  echo
+ 
+  echo "$(tput setaf $cyan)== Recent Commits:$(tput sgr0)"
+  git --no-pager log --max-count=2
+  echo
+ 
+  echo "$(tput setaf $cyan)Type 'git log' for more commits, or 'git show' for full commit details.$(tput sgr0)"
+else
+  echo "$(tput setaf $red)Not a git repository!$(tput sgr0)"
+fi
+ 
+popd >/dev/null

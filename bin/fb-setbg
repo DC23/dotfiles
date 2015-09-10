@@ -1,0 +1,4 @@
+# if we are on a fluxbox system, set the background to something nice
+if command_exists fbsetroot ; then
+    fbsetroot -bg slategray -fg gray43 -mod 11 11
+fi

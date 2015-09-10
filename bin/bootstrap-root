@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# copy the skeleton files
+cp ../skel/root/.bashrc /root
+cp ../skel/root/.vimrc /root
+cp -r ../.vim/after/ /root/.vim/
+cp -r ../.vim/colors/ /root/.vim/
+
+# install archlinuxfr for yaourt
+echo [archlinuxfr] >> /etc/pacman.conf
+echo SigLevel = Never >> /etc/pacman.conf
+echo Server = http://repo.archlinux.fr/\$arch >> /etc/pacman.conf
+
+# enable ntpd
+systemctl enable ntpd.service
+systemctl start ntpd.service
