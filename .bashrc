@@ -49,7 +49,7 @@ alias git='git --no-pager'
 alias ipyqt='ipython qtconsole --colors=linux --pylab=inline'
 alias ipyqtw='ipython qtconsole --pylab=inline'
 
-# load some default modules on ASC platforms
+# load some default modules
 if [[ $HOSTNAME = bragg-gpu || $HOSTNAME = pearcey-i1 || $HOSTNAME = pearcey-login || $HOSTNAME = cherax ]]; then
     module load vim
     module load git
@@ -114,7 +114,3 @@ fi
 if [[ $HOSTNAME = pango ]]; then
     setxkbmap -option "caps:swapescape"
 fi
-
-#if [[ -d ~/bin/miniconda3/bin ]]; then
-    #export PATH=~/bin/miniconda3/bin:$PATH
-#fi
