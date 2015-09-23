@@ -1,4 +1,4 @@
 Dotfiles
 ========
 
-The .vimrc might be of interest, but nothing else will be of interest to anyone but myself.
+The Vim configuration might be of interest, but likely nothing else will be of interest to anyone but myself.
