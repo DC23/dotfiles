@@ -615,6 +615,7 @@ let g:DoxygenToolkit_classTag = "\\class "
 " e - exit and keep window open
 " <cr> - quit and jump to selected item
 Plugin 'vim-scripts/TaskList.vim'
+let g:tlTokenList = ['TODO', 'FIXME', 'XXX', 'todo']
 
 " YankRing: Maintains a history of yanked, deleted and changed text, similar to the Emacs kill ring.
 Plugin 'vim-scripts/YankRing.vim'
