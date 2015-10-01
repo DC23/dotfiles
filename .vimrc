@@ -462,7 +462,7 @@ let g:syntastic_python_checkers=['']
 " tab to show and cycle through completions
 " C-l to complete common strings
 " C-e to cancel completion popup
-if has("lua")
+if has("lua") && version > 703
     Plugin 'Shougo/neocomplete.vim'
     let g:neocomplete#enable_auto_select = 0
     let g:neocomplete#enable_at_startup = 1
