@@ -71,7 +71,9 @@ if [[ $HOSTNAME == "nibblet" || $HOSTNAME == "pango" || $HOSTNAME == "puffin" ]]
     # virtualenv wrapper
     export PROJECT_HOME=$HOME/code
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-    source /usr/bin/virtualenvwrapper.sh
+    if [ -f "/usr/bin/virtualenvwrapper.sh" ]; then
+        source /usr/bin/virtualenvwrapper.sh
+    fi
 
     alias pacman="pacman --color=always"
     alias gvimb="gvim +'call Enbiggen()'"
