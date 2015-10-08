@@ -227,6 +227,11 @@ if has('python')
     let g:jedi#completions_enabled = 0
 endif
 
+" Fontsize: interactive gvim font size changes
+" <Leader><Leader>+ to enter increase mode. Subsequent + keys increase further
+" <Leader><Leader>- to decrease font size.
+Plugin 'drmikehenry/vim-fontsize'
+
 " SuperTab: <tab> does autocomplete
 Plugin 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "context"
