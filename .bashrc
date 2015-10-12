@@ -92,6 +92,7 @@ export GCC_COLORS=1
 # Alias gvim and chromium so that they don't spam a console with warnings that I don't care about
 if command_exists gvim ; then
     alias gvim='gvim 2>/dev/null'
+    alias gvim_update='gvim +PluginClean +PluginInstall! +qall'
 fi
 
 if command_exists chromium ; then
