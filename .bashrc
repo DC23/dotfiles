@@ -50,7 +50,7 @@ alias ipyqt='ipython qtconsole --colors=linux --pylab=inline'
 alias ipyqtw='ipython qtconsole --pylab=inline'
 
 # load some default modules
-if [[ $HOSTNAME = bragg-gpu || $HOSTNAME = pearcey-i1 || $HOSTNAME = pearcey-login || $HOSTNAME = cherax ]]; then
+if [[ $HOSTNAME = bragg-gpu || $HOSTNAME = pearcey-* || $HOSTNAME = cherax ]]; then
     module load vim
     module load git
 
