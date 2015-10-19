@@ -4,5 +4,6 @@ elseif has('win32') || has('win64')
     "xoriadark looks terrible in a DOS shell
     color default
 else
-    color xoriadark
+    set background=dark
+    color solarized
 endif
