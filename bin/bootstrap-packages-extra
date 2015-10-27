@@ -1,0 +1,7 @@
+#!/bin/sh
+./reflect-mirrors
+pacman -Syyu
+pacman --needed -S dropbox chromium keepass conky
+yaourt --needed -S pycharm-community pacaur stockfish scid-vs-pc
+
+cp ~/skel/conky/conkyrc-2core ~/.conkyrc
