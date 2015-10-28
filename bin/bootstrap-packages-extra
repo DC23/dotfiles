@@ -5,7 +5,7 @@ gpg --keyserver hkp://pool.sks-keyservers.net --recv-key 1EB2638FF56C0C53
 
 yaourt -Syu
 yaourt --needed -S dropbox chromium keepass conky
-yaourt --needed -S pycharm-community pacaur stockfish scid_vs_pc
+yaourt --needed -S pycharm-community pacaur stockfish scid_vs_pc vertex-themes
 
 if [ ! -f "$HOME/.conkyrc" ]; then
     cp ~/skel/conky/conkyrc-2core ~/.conkyrc
