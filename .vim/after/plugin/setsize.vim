@@ -1,4 +1,4 @@
 if has('gui_running')
-    set lines=50
-    set columns=150
+    set lines=62
+    set columns=190
 endif

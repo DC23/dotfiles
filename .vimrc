@@ -7,7 +7,7 @@
 " Utility Functions:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! Enbiggen()
-    set columns=170
+    set columns=190
     set lines=62
 endfunction
 
@@ -300,7 +300,7 @@ let g:buffergator_viewport_split_policy = "B"
 let g:buffergator_sort_regime = "mru"
 let g:buffergator_display_regime = "basename"
 let g:buffergator_autoexpand_on_split = 0
-let g:buffergator_split_size = 5
+let g:buffergator_split_size = 7
 map <F5> :BuffergatorToggle<cr>
 
 " Python Mode:
@@ -375,6 +375,8 @@ if version >= 700
     Plugin 'majutsushi/tagbar'
     let tagbar_left = 0
     let g:tagbar_autofocus = 1
+    let g:tagbar_autoclose = 1
+    let g:tagbar_show_linenumbers = -1
     nnoremap <silent> <F6> :TagbarToggle<CR>
 
     " Add Tagbar support for IDL files (via the ctags extensions in .ctags)
@@ -449,12 +451,13 @@ Plugin 'scrooloose/nerdtree'
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <F7> :NERDTreeToggle<cr>
 map <S-F7> :NERDTreeFind<cr>
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.hg', '\.svn', '\.bzr']
 let NERDChristmasTree = 1
 let NERDTreeShowLineNumbers = 1
-let NERDTreeWinPos = "right"
-let NERDTreeWinSize = 55
+let NERDTreeWinPos = "left"
+let NERDTreeWinSize = 45
 let NERDTreeMinimalUI = 1
+let NERDTreeQuitOnOpen = 1
 
 " Syntastic: runs source code through external syntax checkers
 " check the files in the syntax_checkers directory for details of the required
@@ -687,14 +690,8 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('gui_running')
     " GUI is running or is about to start.
-    " Maximize gvim window.
-    set lines=50
-    if s:is_windows
-        set columns=180
-    else
-        set columns=160
-    endif
-
+    " Note that the GUI window size is set in the .vim/after/plugin/setsize.vim
+    " script.
     set guioptions-=m  "remove menu bar
     set guioptions-=T  "remove toolbar
     set guioptions-=r  "remove right-hand scroll bar
