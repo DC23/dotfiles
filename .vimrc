@@ -212,6 +212,10 @@ Plugin 'alfredodeza/pytest.vim'
 " Airline: fancy status line
 Plugin 'bling/vim-airline'
 
+" Bufferline: fancy buffer manager
+Plugin 'bling/vim-bufferline'
+    let g:bufferline_echo = 1
+
 " Jedi Vim: based on pythoncomplete, promises more up to date python handling
 " After installation, you must run 'git submodule update --init' in your jedi-vim repository.
 " Default bindings:
