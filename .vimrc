@@ -379,7 +379,7 @@ if version >= 700
     Plugin 'majutsushi/tagbar'
     let tagbar_left = 0
     let g:tagbar_autofocus = 1
-    let g:tagbar_autoclose = 1
+    let g:tagbar_autoclose = 0
     let g:tagbar_show_linenumbers = -1
     nnoremap <silent> <F6> :TagbarToggle<CR>
 
@@ -461,7 +461,7 @@ let NERDTreeShowLineNumbers = 1
 let NERDTreeWinPos = "left"
 let NERDTreeWinSize = 45
 let NERDTreeMinimalUI = 1
-let NERDTreeQuitOnOpen = 1
+let NERDTreeQuitOnOpen = 0
 
 " Syntastic: runs source code through external syntax checkers
 " check the files in the syntax_checkers directory for details of the required
