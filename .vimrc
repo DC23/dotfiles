@@ -474,40 +474,40 @@ let g:syntastic_python_checkers=['']
 " tab to show and cycle through completions
 " C-l to complete common strings
 " C-e to cancel completion popup
-if has("lua") && version > 703
-    Plugin 'Shougo/neocomplete.vim'
-    let g:neocomplete#enable_auto_select = 0
-    let g:neocomplete#enable_at_startup = 1
-    let g:neocomplete#enable_smart_case = 1
-    let g:neocomplete#sources#syntax#min_keyword_length = 3
-    let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-    let g:neocomplete#data_directory = '~/.vim/cache/neocomplete'
+"if has("lua") && version > 703
+    "Plugin 'Shougo/neocomplete.vim'
+    "let g:neocomplete#enable_auto_select = 0
+    "let g:neocomplete#enable_at_startup = 1
+    "let g:neocomplete#enable_smart_case = 1
+    "let g:neocomplete#sources#syntax#min_keyword_length = 3
+    "let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+    "let g:neocomplete#data_directory = '~/.vim/cache/neocomplete'
 
-    if !exists('g:neocomplete#keyword_patterns')
-        let g:neocomplete#keyword_patterns = {}
-    endif
-    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+    "if !exists('g:neocomplete#keyword_patterns')
+        "let g:neocomplete#keyword_patterns = {}
+    "endif
+    "let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-    inoremap <expr><C-g>    neocomplete#undo_completion()
-    inoremap <expr><C-l>    neocomplete#complete_common_string()
-    inoremap <expr><CR>     neocomplete#complete_common_string()
+    "inoremap <expr><C-g>    neocomplete#undo_completion()
+    "inoremap <expr><C-l>    neocomplete#complete_common_string()
+    "inoremap <expr><CR>     neocomplete#complete_common_string()
 
-    " <CR>: close popup and save indent.
-    inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-    function! s:my_cr_function()
-        return neocomplete#close_popup() . "\<CR>"
-        " For no inserting <CR> key.
-        "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-    endfunction
+    "" <CR>: close popup and save indent.
+    "inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+    "function! s:my_cr_function()
+        "return neocomplete#close_popup() . "\<CR>"
+        "" For no inserting <CR> key.
+        ""return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+    "endfunction
 
-    " <TAB>: completion.
-    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-    "<C-h>, <BS>: close popup and delete backword char.
-    inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-    inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-    inoremap <expr><C-y>  neocomplete#close_popup()
-    inoremap <expr><C-e>  neocomplete#cancel_popup()"
-else
+    "" <TAB>: completion.
+    "inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+    ""<C-h>, <BS>: close popup and delete backword char.
+    "inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+    "inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+    "inoremap <expr><C-y>  neocomplete#close_popup()
+    "inoremap <expr><C-e>  neocomplete#cancel_popup()"
+"else
     " falling back to neocompletecache
     Plugin 'Shougo/neocomplcache.vim'
     let g:neocomplcache_enable_at_startup=1
@@ -543,7 +543,7 @@ else
     "inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
     inoremap <expr><C-y>  neocomplcache#close_popup()
     inoremap <expr><C-e>  neocomplcache#cancel_popup()
-endif
+"endif
 
 " NeoSnippet: snippets with neocomplete integration
 " C-k: select and expand a snippet from the neocomplete popup
