@@ -1,0 +1,2 @@
+#!/bin/sh
+apt-get install scons ant flex bison ant-optional unzip bzip2 gcc g++ gfortran build-essential openjdk-7-jdk openmpi-bin libopenmpi-dev libfreetype6-dev libpng12-dev python-dev
