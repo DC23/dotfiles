@@ -1,4 +1,3 @@
 #!/bin/sh
-# ASKAPsoft packages for Debian 8
-apt-get install scons flex bison ant ant-optional unzip bzip2 
-apt-get install build-essential gcc g++ gfortran openjdk-7-jdk openmpi-bin libopenmpi-dev libfreetype6-dev libpng12-dev python-dev
+# ASKAPsoft packages for Debian 7 and 8
+apt-get install scons flex bison ant ant-optional unzip bzip2 build-essential gcc g++ gfortran openjdk-7-jdk openmpi-bin libopenmpi-dev libfreetype6-dev libpng12-dev python-dev
