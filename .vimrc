@@ -450,18 +450,20 @@ let g:NERDCustomDelimiters = {
             \ }
 
 " NERDtree: slide-out file explorer
-Plugin 'scrooloose/nerdtree'
-" close vim if the nerdtree buffer is the only one left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-map <F7> :NERDTreeToggle<cr>
-map <S-F7> :NERDTreeFind<cr>
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.hg', '\.svn', '\.bzr']
-let NERDChristmasTree = 1
-let NERDTreeShowLineNumbers = 1
-let NERDTreeWinPos = "left"
-let NERDTreeWinSize = 45
-let NERDTreeMinimalUI = 1
-let NERDTreeQuitOnOpen = 0
+if version >= 703
+    Plugin 'scrooloose/nerdtree'
+    " close vim if the nerdtree buffer is the only one left
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    map <F7> :NERDTreeToggle<cr>
+    map <S-F7> :NERDTreeFind<cr>
+    let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.hg', '\.svn', '\.bzr']
+    let NERDChristmasTree = 1
+    let NERDTreeShowLineNumbers = 1
+    let NERDTreeWinPos = "left"
+    let NERDTreeWinSize = 45
+    let NERDTreeMinimalUI = 1
+    let NERDTreeQuitOnOpen = 0
+endif
 
 " Syntastic: runs source code through external syntax checkers
 " check the files in the syntax_checkers directory for details of the required
