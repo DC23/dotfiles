@@ -4,9 +4,18 @@
 gpg --keyserver hkp://pool.sks-keyservers.net --recv-key 1EB2638FF56C0C53
 
 yaourt -Syu
-yaourt --needed -S dropbox chromium keepass conky
-yaourt --needed -S python-iso8601
-yaourt --needed -S pycharm-community pacaur stockfish scid_vs_pc vertex-themes pandoc
+
+# Extra apps I use on desktops but not VMs
+yaourt --needed -S dropbox chromium keepass
+
+# Common tools from Aur
+yaourt --needed -S pycharm-community pacaur 
+
+# Chess apps from Aur
+yaourt --needed -S stockfish scid_vs_pc
+
+# Other Aur apps
+yaourt --needed -S vertex-themes
 
 if [ ! -f "$HOME/.conkyrc" ]; then
     cp ~/skel/conky/conkyrc-2core ~/.conkyrc
