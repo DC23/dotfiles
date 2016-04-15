@@ -1,7 +1,10 @@
 #!/bin/sh
 
 # Packages for setting up base Debian installs
-apt-get install vim-gtk meld subversion git linux-headers-amd64
+apt-get install vim-gtk meld subversion git linux-headers-amd64 python-gpgme
 
 # ASKAPsoft packages for Debian 7 and 8
 apt-get install scons flex bison ant ant-optional unzip bzip2 build-essential gcc g++ gfortran openjdk-7-jdk openmpi-bin libopenmpi-dev libfreetype6-dev libpng12-dev python-dev
+
+# Extra packages
+apt-get install dropbox
