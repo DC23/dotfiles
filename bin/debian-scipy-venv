@@ -1,7 +1,11 @@
+#!/bin/bash
 # Script for creating an up to date Scientific Python stack in a virtual environment on Debian.
 # Debian system packages are ancient.
 # Do not run as root.
 # Requires (but does not test) that the debian-packages script has already been executed.
+
+# activate the virtualenvwrapper aliases
+source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
 # create and activate virtual environment using mkvirtualenv wrapper (env name is jupnb)
 mkvirtualenv --no-setuptools --python /usr/bin/python3 scipy
@@ -22,4 +26,4 @@ pip install sympy scipy seaborn pandas jupyter matplotlib
 #pip install scikit-learn
 
 # deactivate venv
-deactivate
+#deactivate
