@@ -9,7 +9,8 @@ yaourt -Syu
 yaourt --needed -S dropbox chromium keepass
 
 # Common tools from Aur
-yaourt --needed -S pycharm-community pacaur 
+yaourt --needed -S pycharm-community
+yaourt --needed -S pacaur 
 
 # Chess apps from Aur
 yaourt --needed -S stockfish scid_vs_pc
