@@ -1,13 +1,14 @@
 #!/bin/sh
+# Run as root or with sudo
 
 # Packages for setting up base Debian installs
-apt-get install vim-gtk meld subversion git linux-headers-amd64 python-gpgme libzmq3 libzmq3-dev python3-dev
+apt-get install -y vim-gtk meld subversion git linux-headers-amd64 python-gpgme libzmq3 libzmq3-dev python3-dev
 
 # ASKAPsoft packages for Debian 7 and 8
-apt-get install scons flex bison ant ant-optional unzip bzip2 build-essential gcc g++ gfortran openjdk-7-jdk openmpi-bin libopenmpi-dev libfreetype6-dev libpng12-dev python-dev
+apt-get install -y scons flex bison ant ant-optional unzip bzip2 build-essential gcc g++ gfortran openjdk-7-jdk openmpi-bin libopenmpi-dev libfreetype6-dev libpng12-dev python-dev
 
 # Extra packages
-apt-get install dropbox
+apt-get install -y dropbox
 
 # install curl virtualenvwrapper
 apt-get install -y curl virtualenvwrapper
@@ -22,4 +23,4 @@ apt-get install -y python3-dev g++
 apt-get install -y libblas-dev liblapack-dev gfortran
 
 # install some dependencies for matplotlib
-apt-get install -y libfreetype6-dev libpng12-dev libjpeg8-dev
+apt-get install -y libfreetype6-dev libpng12-dev libjpeg62-turbo-dev
