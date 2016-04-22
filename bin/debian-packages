@@ -8,3 +8,18 @@ apt-get install scons flex bison ant ant-optional unzip bzip2 build-essential gc
 
 # Extra packages
 apt-get install dropbox
+
+# install curl virtualenvwrapper
+apt-get install -y curl virtualenvwrapper
+
+# install as workaround for https://github.com/matplotlib/matplotlib/issues/3029/
+apt-get install -y pkg-config
+
+# install python development packages and g++
+apt-get install -y python3-dev g++
+
+# install dependencies for scipy
+apt-get install -y libblas-dev liblapack-dev gfortran
+
+# install some dependencies for matplotlib
+apt-get install -y libfreetype6-dev libpng12-dev libjpeg8-dev
