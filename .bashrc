@@ -67,6 +67,24 @@ if [[ $HOSTNAME = bragg-gpu || $HOSTNAME = pearcey-* || $HOSTNAME = cherax ]]; t
 fi
 
 # System specific setup
+if [[ $HOSTNAME == "belkar" ]]; then
+    # virtualenv wrapper
+    export PROJECT_HOME=$HOME/code
+    VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+    if [ -f "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" ]; then
+        source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+    fi
+
+    alias gvimb="gvim +'call Enbiggen()'"
+
+    export HISTCONTROL=ignoreboth:erasedups
+
+    #export OMP_NUM_THREADS=2
+    #export OPENCV_HOME=/usr/include
+    #export BOOST_HOME=/usr/include/boost
+    export CC=gcc
+fi
+
 if [[ $HOSTNAME == "nibblet" || $HOSTNAME == "pango" || $HOSTNAME == "puffin" ]]; then
     # virtualenv wrapper
     export PROJECT_HOME=$HOME/code
@@ -79,11 +97,10 @@ if [[ $HOSTNAME == "nibblet" || $HOSTNAME == "pango" || $HOSTNAME == "puffin" ]]
     alias gvimb="gvim +'call Enbiggen()'"
 
     export HISTCONTROL=ignoreboth:erasedups
-    export OMP_NUM_THREADS=2
 
+    export OMP_NUM_THREADS=2
     export OPENCV_HOME=/usr/include
     export BOOST_HOME=/usr/include/boost
-
     export CC=gcc
 fi
 
