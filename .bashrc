@@ -70,6 +70,7 @@ if [[ $HOSTNAME = galaxy-* ]]; then
     module use /group/askap/modulefiles/
     module load askapsoft
     module load askapdata
+    module load askappipeline
 fi
 
 # System specific setup
