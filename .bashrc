@@ -66,6 +66,12 @@ if [[ $HOSTNAME = bragg-gpu || $HOSTNAME = pearcey-* || $HOSTNAME = cherax ]]; t
     #fi
 fi
 
+if [[ $HOSTNAME = galaxy-* ]]; then
+    module use /group/askap/modulefiles/
+    module load askapsoft
+    module load askapdata
+fi
+
 # System specific setup
 if [[ $HOSTNAME == "belkar" ]]; then
     # virtualenv wrapper
