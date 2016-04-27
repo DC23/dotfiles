@@ -66,14 +66,14 @@ if [[ $HOSTNAME = bragg-gpu || $HOSTNAME = pearcey-* || $HOSTNAME = cherax ]]; t
     #fi
 fi
 
-if [[ $HOSTNAME = galaxy-* ]]; then
-    module use /group/askap/modulefiles/
+if [[ $PAWSEY_OS = cle* ]]; then
+    module use /group/askap/modulefiles
     module load askapsoft
     module load askapdata
     module load askappipeline
 fi
 
-# System specific setup
+# Debian Hosts
 if [[ $HOSTNAME == "belkar" ]]; then
     # virtualenv wrapper
     export PROJECT_HOME=$HOME/code
@@ -92,6 +92,7 @@ if [[ $HOSTNAME == "belkar" ]]; then
     export CC=gcc
 fi
 
+# Arch Linux hosts
 if [[ $HOSTNAME == "nibblet" || $HOSTNAME == "pango" || $HOSTNAME == "puffin" ]]; then
     # virtualenv wrapper
     export PROJECT_HOME=$HOME/code
