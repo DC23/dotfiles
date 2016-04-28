@@ -11,8 +11,7 @@ fi
 
 # environment variables
 HOSTNAME=`hostname`
-PATH="~/bin:$PATH"
-export PATH
+export PATH="~/bin:$PATH"
 export GREP_COLOR="1;33"
 EDITOR="vim"
 export EDITOR
@@ -90,6 +89,9 @@ if [[ $HOSTNAME == "belkar" ]]; then
     #export OPENCV_HOME=/usr/include
     #export BOOST_HOME=/usr/include/boost
     export CC=gcc
+
+    # put Anaconda into the path
+    export PATH="$CONDA_INSTALL_DIR/bin:$PATH"
 fi
 
 # Arch Linux hosts
