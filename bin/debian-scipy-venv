@@ -7,7 +7,7 @@
 # activate the virtualenvwrapper aliases
 source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
-# create and activate virtual environment using mkvirtualenv wrapper (env name is jupnb)
+# create and activate virtual environment using mkvirtualenv wrapper (env name is scipy)
 mkvirtualenv --no-setuptools --python /usr/bin/python3 scipy
 
 # install fresh pip
