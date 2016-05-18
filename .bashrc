@@ -92,6 +92,11 @@ if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" ]]; then
 
     # put Anaconda into the path
     export PATH="$CONDA_INSTALL_DIR/bin:$PATH"
+
+    # Use bash-completion, if available. This is not enabled by default
+    # on LMDE or Debian.
+    [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+        . /usr/share/bash-completion/bash_completion
 fi
 
 # Arch Linux hosts
