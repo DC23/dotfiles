@@ -5,7 +5,7 @@
 apt-get install -y vim-gtk meld subversion git linux-headers-amd64 python-gpgme libzmq3 libzmq3-dev python3-dev
 
 # ASKAPsoft packages for Debian 7 and 8
-apt-get install -y scons flex bison ant ant-optional unzip bzip2 build-essential gcc g++ gfortran openjdk-7-jdk openmpi-bin libopenmpi-dev libfreetype6-dev libpng12-dev python-dev
+apt-get install -y scons flex bison ant ant-optional unzip bzip2 build-essential gcc g++ gfortran openjdk-7-jdk openjdk-7-doc openmpi-bin libopenmpi-dev libfreetype6-dev libpng12-dev python-dev
 
 # Extra packages
 apt-get install -y dropbox
