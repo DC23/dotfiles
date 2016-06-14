@@ -65,8 +65,21 @@ if [[ $HOSTNAME = bragg-gpu || $HOSTNAME = pearcey-* || $HOSTNAME = cherax ]]; t
     #fi
 fi
 
+# Galaxy nodes
 if [[ $PAWSEY_OS = cle* ]]; then
+    module swap PrgEnv-cray PrgEnv-gnu
+    module swap gcc/4.8.2 gcc/4.9.0
     module use /group/askap/modulefiles
+
+    module load python/2.7.10
+
+    module load java
+    export JAVA_HOME=$JAVA_PATH
+
+    # Allow MPICH to fallback to 4k pages if large pages cannot be allocated
+    # This is important for running some of the functional tests
+    export MPICH_GNI_MALLOC_FALLBACK=enabled
+
     module load askapsoft
     module load askapdata
     module load askappipeline
