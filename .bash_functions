@@ -8,7 +8,7 @@ command_exists () {
 cdwhich_func () {
     cd "$(dirname "$(which $1)")"
 }
-alias cdwhich=cdw_func
+alias cdwhich=cdwhich_func
 
 # This function defines a 'cd' replacement function capable of keeping, 
 # displaying and accessing history of visited directories, up to 10 entries.
