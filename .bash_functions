@@ -3,6 +3,12 @@ command_exists () {
     command -v $1 >/dev/null 2>&1 ;
 }
 
+# Function for changing directory to the location of an executable found by
+# which.
+cdwhich_func () {
+    cd "$(dirname "$(which $1)")"
+}
+alias cdwhich=cdw_func
 
 # This function defines a 'cd' replacement function capable of keeping, 
 # displaying and accessing history of visited directories, up to 10 entries.
