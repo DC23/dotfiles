@@ -30,7 +30,7 @@ if [[ $HOSTNAME = FRACTURE-KH || $HOSTNAME = Eris || $HOSTNAME = ASHOK-BT ]]; th
 fi
 
 alias la='ls -A'
-alias ll='ls -Alh'
+alias ll='ls -al'
 alias l='ls -lh'
 alias dmls='dmls -lah'
 alias bc='bc -l'
