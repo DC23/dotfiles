@@ -148,6 +148,10 @@ if command_exists midori ; then
     alias midori='midori 2>/dev/null'
 fi
 
+if command_exists idea ; then
+    alias idea='idea 2>/dev/null'
+fi
+
 # if we have the tree command, turn colorisation on
 if command_exists tree ; then
     alias tree="tree -C"
