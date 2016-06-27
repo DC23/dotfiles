@@ -142,10 +142,6 @@ if command_exists gvim ; then
     alias gvim-update='gvim +PluginClean +PluginInstall! +qall'
 fi
 
-if command_exists rabbitvcs ; then
-    alias rabbitvcs='rabbitvcs 2>/dev/null'
-fi
-
 if command_exists chromium ; then
     alias chromium='chromium 2>/dev/null'
 fi
