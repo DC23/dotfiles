@@ -112,6 +112,9 @@ if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" ]]; then
     # on LMDE or Debian.
     [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
         . /usr/share/bash-completion/bash_completion
+
+    # lazy typist shortcut for initialising the ASKAPsoft environment.
+    alias ia='source ~/code/askapsoft/initaskap.sh'
 fi
 
 # Arch Linux hosts
@@ -168,6 +171,9 @@ if command_exists fortune ; then
     fortune
     echo
 fi
+
+# Subversion alias for quiet status listings that ignore unversioned files
+alias ssq="svn status -q"
 
 if [[ $HOSTNAME = pango ]]; then
     setxkbmap -option "caps:swapescape"
