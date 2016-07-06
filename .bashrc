@@ -173,7 +173,7 @@ if command_exists fortune ; then
 fi
 
 if command_exists multitail ; then
-    alias mtl="multitail -cS l4j"
+    alias mtl="multitail -CS l4j"
 fi
 
 # Subversion alias for quiet status listings that ignore unversioned files
