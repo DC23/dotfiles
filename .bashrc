@@ -1,7 +1,7 @@
 # Check for an interactive session
 [ -z "$PS1" ] && return
 
-# Set our prompt. 
+# Set our prompt.
 if [ -f "${HOME}/.bash_prompt" ]; then
     source "${HOME}/.bash_prompt"
 fi
@@ -170,6 +170,10 @@ if command_exists fortune ; then
     echo
     fortune
     echo
+fi
+
+if command_exists multitail ; then
+    alias mtl="multitail -cS l4j"
 fi
 
 # Subversion alias for quiet status listings that ignore unversioned files
