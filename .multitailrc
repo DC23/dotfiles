@@ -3,6 +3,7 @@
 # custom log4j scheme with different log levels as different colors
 # Not called log4j as there is a default scheme of that name
 colorscheme:l4j
+cs_re:blue,white,bold:.*ASKAP.*
 cs_re:yellow:\[.*\]
 cs_re:white,red,bold:.*FATAL.*
 cs_re:red,white,bold:.*ERROR.*
