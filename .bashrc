@@ -49,9 +49,11 @@ alias quota='quota -s'
 alias git='git --no-pager'
 alias ipyqt='ipython qtconsole --colors=linux --pylab=inline'
 alias ipyqtw='ipython qtconsole --pylab=inline'
-alias gs='git status'
+alias gst='git status'
+alias gpr='git pull --rebase'
 alias gc='git commit'
 alias ga='git add'
+alias gps='git push'
 
 # load some default modules
 if [[ $HOSTNAME = bragg-gpu || $HOSTNAME = pearcey-* || $HOSTNAME = cherax ]]; then
