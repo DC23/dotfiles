@@ -53,6 +53,7 @@ alias gst='git status'
 alias gpr='git pull --rebase'
 alias gc='git commit'
 alias ga='git add'
+alias gaa='git add --all'
 alias gps='git push'
 
 # load some default modules
