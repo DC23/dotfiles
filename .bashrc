@@ -151,6 +151,7 @@ export GCC_COLORS=1
 if command_exists gvim ; then
     alias gvim='gvim 2>/dev/null'
     alias gvim-update='gvim +PluginClean +PluginInstall! +qall'
+    alias vim-update='vim +PluginClean +PluginInstall! +qall'
 fi
 
 if command_exists chromium ; then
