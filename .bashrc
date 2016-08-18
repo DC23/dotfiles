@@ -126,9 +126,10 @@ if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" ]]; then
 
     # scriptabit shortcuts
     alias sb='scriptabit'
-    alias sb-deposit='scriptabit -as habitica_dc --run sb_banking --bank-deposit'
-    alias sb-withdraw='scriptabit -as habitica_dc --run sb_banking --bank-withdraw'
-    alias sb-balance='scriptabit -as habitica_dc --run sb_banking'
+    alias sb-deposit='scriptabit -as dc --run banking --bank-deposit'
+    alias sb-withdraw='scriptabit -as dc --run banking --bank-withdraw'
+    alias sb-balance='scriptabit -as dc --run banking'
+    alias sb-trello='scriptabit -as dc --run trello'
 
 fi
 
