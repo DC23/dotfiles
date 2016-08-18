@@ -18,6 +18,9 @@ export GREP_COLOR="1;33"
 EDITOR="vim"
 export EDITOR
 
+# scriptabit user plugin directory
+export SCRIPTABIT_USER_PLUGIN_DIR="~/Dropbox/scriptabit_plugins"
+
 # The default Anaconda location
 export CONDA_INSTALL_DIR=$HOME/bin/anaconda
 
