@@ -99,7 +99,7 @@ if [[ $PAWSEY_OS = cle* ]]; then
 fi
 
 # Debian Hosts
-if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" ]]; then
+if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "ERIS" ]]; then
     # virtualenv wrapper
     export PROJECT_HOME=$HOME/code
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
