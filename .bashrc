@@ -129,10 +129,10 @@ if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "ERIS" ]]; t
 
     # scriptabit shortcuts
     alias sb='scriptabit'
-    alias sb-deposit='scriptabit -as dc --run banking --bank-deposit'
-    alias sb-withdraw='scriptabit -as dc --run banking --bank-withdraw'
-    alias sb-balance='scriptabit -as dc --run banking'
-    alias sb-trello='scriptabit -as dc --run trello'
+    alias sb-deposit='scriptabit --run banking --bank-deposit'
+    alias sb-withdraw='scriptabit --run banking --bank-withdraw'
+    alias sb-balance='scriptabit --run banking'
+    alias sb-trello='scriptabit --run trello'
 
 fi
 
