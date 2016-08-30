@@ -127,6 +127,8 @@ if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "ERIS" ]]; t
     # lazy typist shortcut for initialising the ASKAPsoft environment.
     alias ia='source ~/code/askapsoft/initaskap.sh'
 
+    # scriptabit
+    alias sb='scriptabit'
 fi
 
 # Arch Linux hosts
