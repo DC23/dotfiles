@@ -19,7 +19,11 @@ EDITOR="vim"
 export EDITOR
 
 # scriptabit user plugin directory
-export SCRIPTABIT_USER_PLUGIN_DIR="~/Dropbox/scriptabit_plugins"
+if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "ERIS" ]]; then
+    export SCRIPTABIT_USER_PLUGIN_DIR="/mnt/c/Users/Daniel/Dropbox/scriptabit_plugins"
+else
+    export SCRIPTABIT_USER_PLUGIN_DIR="~/Dropbox/scriptabit_plugins"
+fi
 
 # The default Anaconda location
 export CONDA_INSTALL_DIR=$HOME/bin/anaconda
