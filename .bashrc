@@ -88,8 +88,10 @@ if [[ $PAWSEY_OS = cle* ]]; then
     module swap gcc/4.8.2 gcc/4.9.0
     module use /group/askap/modulefiles
 
+    # default Python is too old
     module load python/2.7.10
 
+    # Building askapsoft requires Java
     module load java
     export JAVA_HOME=$JAVA_PATH
 
@@ -97,9 +99,10 @@ if [[ $PAWSEY_OS = cle* ]]; then
     # This is important for running some of the functional tests
     export MPICH_GNI_MALLOC_FALLBACK=enabled
 
-    module load askapsoft
-    module load askapdata
-    module load askappipeline
+    #module load askapsoft
+    #module load askapdata
+    #module load askappipeline
+    #module load askapcli
 fi
 
 # Debian Hosts

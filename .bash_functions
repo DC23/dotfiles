@@ -74,3 +74,8 @@ function cdcpman() {
     cd $ASKAP_ROOT/Code/Components/Services/manager/current
 }
 
+# Recursive directory deletion on Lustre
+function munrm() {
+    find $1 -type f -print0 | xargs -0 munlink
+    find $1 -depth -type d -empty -delete
+}
