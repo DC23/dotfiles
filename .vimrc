@@ -216,6 +216,14 @@ Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
     let g:bufferline_echo = 1
 
+" Autoformat: Code formatting via external programs such as clang-format and
+" astyle
+if has('python') && version >= 704
+    Plugin 'Chiel92/vim-autoformat'
+    noremap <leader>fd :Autoformat<CR>
+    nmap <leader>fd :Autoformat<CR>
+endif
+
 " Jedi Vim: based on pythoncomplete, promises more up to date python handling
 " After installation, you must run 'git submodule update --init' in your jedi-vim repository.
 " Default bindings:
@@ -728,6 +736,8 @@ endif
 " will automatically indent itself to the next level of indentation
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
+set cino=N-s        " Don't indent C++ namespaces
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Auto Completion Settings:
@@ -842,7 +852,7 @@ set pastetoggle=<F12>
 nmap <leader>d :Dox<cr>
 
 " format document (entire file)
-nmap <leader>fd :call Preserve("normal gg=G")<CR>
+"nmap <leader>fd :call Preserve("normal gg=G")<CR>
 
 " strip trailing whitespace from file
 nmap <leader>fw :call StripTrailingWhitespace()<CR>
