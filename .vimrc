@@ -220,8 +220,6 @@ Plugin 'bling/vim-bufferline'
 " astyle
 if has('python') && version >= 704
     Plugin 'Chiel92/vim-autoformat'
-    noremap <leader>fd :Autoformat<CR>
-    nmap <leader>fd :Autoformat<CR>
 endif
 
 " Jedi Vim: based on pythoncomplete, promises more up to date python handling
@@ -852,7 +850,7 @@ set pastetoggle=<F12>
 nmap <leader>d :Dox<cr>
 
 " format document (entire file)
-"nmap <leader>fd :call Preserve("normal gg=G")<CR>
+nmap <leader>fd :call Preserve("normal gg=G")<CR>
 
 " strip trailing whitespace from file
 nmap <leader>fw :call StripTrailingWhitespace()<CR>
