@@ -5,7 +5,7 @@
 apt-get install -y vim-gtk meld subversion linux-headers-amd64 python-gpgme libzmq3 libzmq3-dev python3-dev exuberant-ctags terminator fonts-inconsolata ttf-dejavu fonts-liberation tree clang-format-3.5 astyle
 
 # Base dev packages
-apt-get install -y unzip bzip2 build-essential gcc g++ gfortran openjdk-7-jdk openjdk-7-doc libfreetype6-dev libpng12-dev python-dev python3-dev
+apt-get install -y unzip bzip2 build-essential gcc g++ gfortran openjdk-7-jdk openjdk-7-doc libfreetype6-dev libpng12-dev python-dev python3-dev autoconf
 
 # Extra ASKAPsoft packages for Debian 7 and 8
 #apt-get install -y scons flex bison ant ant-optional openmpi-bin libopenmpi-dev junit
