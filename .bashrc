@@ -133,6 +133,8 @@ if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "ERIS" ]]; t
 
     # lazy typist shortcut for initialising the ASKAPsoft environment.
     alias ia='source ~/code/askapsoft/initaskap.sh'
+    alias cdcp='cd $ASKAP_ROOT/Code/Components/Services/manager/current'
+    alias cdsms='cd $ASKAP_ROOT/Code/Components/Services/skymodel/current'
 
     # scriptabit
     alias sb='scriptabit'

@@ -69,11 +69,6 @@ cdwhich_func () {
 }
 alias cdwhich=cdwhich_func
 
-# function for changing to the cpmanager directory based on $ASKAP_ROOT
-function cdcpman() {
-    cd $ASKAP_ROOT/Code/Components/Services/manager/current
-}
-
 # Recursive directory deletion on Lustre
 function munrm() {
     lfs find $1 -type f -print0 | xargs -0 munlink
