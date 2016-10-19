@@ -476,7 +476,9 @@ endif
 " checkers.
 " By default, files are checked when first opened, and when a buffer is saved.
 Plugin 'scrooloose/syntastic'
-let g:syntastic_python_checkers=['']
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["py", "cpp"] }
 
 " Neocomplete: completion framework
 " tab to show and cycle through completions
@@ -611,23 +613,24 @@ Plugin 'vimoutliner/vimoutliner'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 let g:load_doxygen_syntax=1
 let g:DoxygenToolkit_authorName="Daniel Collins (daniel.collins@csiro.au)"
-let g:DoxygenToolkit_briefTag_pre = "\\brief "
+let g:DoxygenToolkit_briefTag_pre = "@brief "
 let g:DoxygenToolkit_briefTag_post = ""
-let g:DoxygenToolkit_templateParamTag_pre = "\\tparam "
+let g:DoxygenToolkit_templateParamTag_pre = "@tparam "
 let g:DoxygenToolkit_templateParamTag_post = ""
-let g:DoxygenToolkit_paramTag_pre = "\\param "
+let g:DoxygenToolkit_paramTag_pre = "@param "
 let g:DoxygenToolkit_paramTag_post = ""
-let g:DoxygenToolkit_returnTag = "\\return "
-let g:DoxygenToolkit_throwTag_pre = "\\throw " " @exception is also valid
+let g:DoxygenToolkit_returnTag = "@return "
+let g:DoxygenToolkit_throwTag_pre = "@throw " " @exception is also valid
 let g:DoxygenToolkit_throwTag_post = ""
 let g:DoxygenToolkit_blockHeader = ""
 let g:DoxygenToolkit_blockFooter = ""
-let g:DoxygenToolkit_fileTag = "\\file "
-let g:DoxygenToolkit_authorTag = "\\author "
-let g:DoxygenToolkit_dateTag = "\\date "
-let g:DoxygenToolkit_versionTag = "\\version "
-let g:DoxygenToolkit_blockTag = "\\name "
-let g:DoxygenToolkit_classTag = "\\class "
+let g:DoxygenToolkit_fileTag = "@file "
+let g:DoxygenToolkit_authorTag = "@author "
+let g:DoxygenToolkit_dateTag = "@date "
+let g:DoxygenToolkit_versionTag = "@version "
+let g:DoxygenToolkit_blockTag = "@name "
+let g:DoxygenToolkit_classTag = "@class "
+let g:DoxygenToolkit_commentType = "C++"  " Use // instead of /** .. */
 
 " TaskList: creates a list of todo items from a file
 " <Leader>t   Display list.
