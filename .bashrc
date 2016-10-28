@@ -156,7 +156,8 @@ if [[ $HOSTNAME == "nibblet" || $HOSTNAME == "puffin" ]]; then
 
     export OMP_NUM_THREADS=2
     export OPENCV_HOME=/usr/include
-    export BOOST_HOME=/usr/include/boost
+    export BOOST_HOME=/usr/include
+    export BOOST_ROOT=/usr/lib/
     export CC=gcc
 fi
 
