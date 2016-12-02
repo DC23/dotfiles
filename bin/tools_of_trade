@@ -1,0 +1,3 @@
+#!/bin/bash
+scriptabit -r character_buffs --cast-skill toolsOfTrade -n 5
+
