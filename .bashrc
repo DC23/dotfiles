@@ -107,16 +107,13 @@ fi
 
 # ingest
 if [[ $PAWSEY_OS = SLES* ]]; then
-   module load python/2.7.10
-   module load gcc
-   module load mpich
-   module unload gcc
-   #module load askapservices
-   #module load askapdata
-
-   # Load additional modules
-   module load java
-   export JAVA_HOME=$JAVA_PATH
+    export MPICH_GNI_MALLOC_FALLBACK=enabled
+    module load python/2.7.10
+    module load java
+    module load gcc/4.8.5
+    module load mpich
+    module unload gcc
+    export JAVA_HOME=$JAVA_PATH
 fi
 
 # Debian Hosts
