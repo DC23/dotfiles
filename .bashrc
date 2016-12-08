@@ -105,6 +105,20 @@ if [[ $PAWSEY_OS = cle* ]]; then
     #module load askapcli
 fi
 
+# ingest
+if [[ $PAWSEY_OS = SLES* ]]; then
+   module load python/2.7.10
+   module load gcc
+   module load mpich
+   module unload gcc
+   #module load askapservices
+   #module load askapdata
+
+   # Load additional modules
+   module load java
+   export JAVA_HOME=$JAVA_PATH
+fi
+
 # Debian Hosts
 if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "ERIS" ]]; then
     # virtualenv wrapper
