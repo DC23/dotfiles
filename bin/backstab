@@ -1,3 +1,5 @@
 #!/bin/bash
-scriptabit -r character_buffs --cast-skill backStab --buff-target 7b069a9e-80aa-47ab-99fd-15fae4dd8ba7 -n 5
+COUNT=$1
+[ -z "$1" ] && COUNT=5
+scriptabit -r character_buffs --cast-skill backStab --buff-target 7b069a9e-80aa-47ab-99fd-15fae4dd8ba7 -n $COUNT
 
