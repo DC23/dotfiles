@@ -6,5 +6,6 @@ elseif has('win32') || has('win64')
     color default
 else
     set background=dark
-    color base16-ateliersavanna
+    color apprentice
+    "color Tomorrow-Night
 endif
