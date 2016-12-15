@@ -237,6 +237,9 @@ if has('python')
     let g:jedi#completions_enabled = 0
 endif
 
+" Easygrep: improved usability of multifile search and replace.
+Plugin 'dkprice/vim-easygrep'
+
 " Fontsize: interactive gvim font size changes
 " <Leader><Leader>+ to enter increase mode. Subsequent + keys increase further
 " <Leader><Leader>- to decrease font size.
