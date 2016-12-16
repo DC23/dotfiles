@@ -386,7 +386,7 @@ let g:EasyMotion_do_shade = 1
 " Tagbar: tag navigation made better
 if version >= 700
     Plugin 'majutsushi/tagbar'
-    let tagbar_left = 0
+    let tagbar_left = 1
     let g:tagbar_autofocus = 1
     let g:tagbar_autoclose = 1
     let g:tagbar_show_linenumbers = -1
@@ -732,7 +732,7 @@ set wrap
 set formatoptions=qrn1
 set backspace=indent,eol,start
 set shiftround " round indent to multiple of shiftwidth
-set textwidth=80 "lines longer than 80 will be broken at next whitespace
+set textwidth=90 "lines longer than this will be broken at next whitespace
 if version >= 703   " 7.2 and below don't have colorcolumn
     set colorcolumn=80
 endif
@@ -799,7 +799,7 @@ endif
 " Folding options
 set foldenable
 set foldmethod=syntax
-set foldlevel=5
+set foldlevel=7
 let xml_syntax_folding=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
