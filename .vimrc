@@ -388,7 +388,7 @@ if version >= 700
     Plugin 'majutsushi/tagbar'
     let tagbar_left = 0
     let g:tagbar_autofocus = 1
-    let g:tagbar_autoclose = 0
+    let g:tagbar_autoclose = 1
     let g:tagbar_show_linenumbers = -1
     nnoremap <silent> <F6> :TagbarToggle<CR>
 
