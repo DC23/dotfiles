@@ -1,4 +1,4 @@
 #!/bin/bash
 COUNT=$1
 [ -z "$1" ] && COUNT=5
-scriptabit -r spellcast --cast-skill toolsOfTrade -n $COUNT
+sb-cast --cast-skill toolsOfTrade -n $COUNT
