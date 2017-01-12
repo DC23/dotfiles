@@ -658,8 +658,12 @@ if version >= 702
 endif
 
 " VimWiki: Personal text-based wiki system in Vim, with Markdown support.
+Plugin 'mattn/calendar-vim'
 Plugin 'vimwiki/vimwiki'
-let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki-html/'}]
+let g:vimwiki_list = [
+        \{'path': '~/Dropbox/vimwiki/personal.wiki'},
+        \{'path': '~/Dropbox/vimwiki/tech.wiki'}
+    \]
 
 " QFEnter: restores sanity to opening items from the QuickFix window
 " Enter, double-left click: open item in last window
