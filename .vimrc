@@ -657,6 +657,10 @@ if version >= 702
     Plugin 'vim-scripts/ZoomWin'
 endif
 
+" VimWiki: Personal text-based wiki system in Vim, with Markdown support.
+Plugin 'vimwiki/vimwiki'
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'path_html': '~/Dropbox/vimwiki-html/'}]
+
 " QFEnter: restores sanity to opening items from the QuickFix window
 " Enter, double-left click: open item in last window
 " <leader><enter>: open item in new vertical split
