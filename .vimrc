@@ -679,8 +679,6 @@ for wiki_name in wikis
     let wiki.diary_rel_path = 'diary/'
     call add(g:vimwiki_list, wiki)
 endfor
-        "\{'path': '~/Dropbox/vimwiki/personal.wiki'},
-        "\{'path': '~/Dropbox/vimwiki/tech.wiki'}
 
 " QFEnter: restores sanity to opening items from the QuickFix window
 " Enter, double-left click: open item in last window
