@@ -660,7 +660,7 @@ let vimwiki_export_path='~/Dropbox/vimwiki_exports/'
 
 " Common wiki settings
 let wiki_settings={
-    \ 'template_path': vimwiki_export_path.'vimwiki-assets/',
+    \ 'template_path': vimwiki_export_path.'assets/',
     \ 'template_default': 'default',
     \ 'template_ext': '.html',
     \ 'auto_export': 0,
