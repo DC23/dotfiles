@@ -283,13 +283,6 @@ Plugin 'godlygeek/tabular'
 " Press f to set RGB text to current color
 Plugin 'guns/xterm-color-table.vim'
 
-" Python Doc String Generation:
-" Place cursor on function or class definition line, then
-" :Pydocstring
-" or <C-l>
-nmap <Leader>~ <Plug>(pydocstring)
-Plugin 'heavenshell/vim-pydocstring'
-
 " Honza Snippet Collection: large and actively developed snippet collection that
 " works with neosnippet
 Plugin 'honza/vim-snippets'
@@ -660,10 +653,34 @@ endif
 " VimWiki: Personal text-based wiki system in Vim, with Markdown support.
 Plugin 'mattn/calendar-vim'
 Plugin 'vimwiki/vimwiki'
-let g:vimwiki_list = [
-        \{'path': '~/Dropbox/vimwiki/personal.wiki'},
-        \{'path': '~/Dropbox/vimwiki/tech.wiki'}
-    \]
+
+" Store the wiki files and exports in Dropbox
+let vimwiki_path='~/Dropbox/vimwiki/'
+let vimwiki_export_path='~/Dropbox/vimwiki_exports/'
+
+" Common wiki settings
+let wiki_settings={
+    \ 'template_path': vimwiki_export_path.'vimwiki-assets/',
+    \ 'template_default': 'default',
+    \ 'template_ext': '.html',
+    \ 'auto_export': 0,
+    \ 'nested_syntaxes': {
+        \ 'js':'javascript',
+    \ }}
+
+" Define all the wikis, with the common settings applied
+let wikis=["personal"]
+let g:vimwiki_list = []
+for wiki_name in wikis
+    let wiki=copy(wiki_settings)
+    let wiki.path = vimwiki_path.wiki_name.'/'
+    let wiki.path_html = vimwiki_export_path.wiki_name.'/'
+    let wiki.diary_index = 'index'
+    let wiki.diary_rel_path = 'diary/'
+    call add(g:vimwiki_list, wiki)
+endfor
+        "\{'path': '~/Dropbox/vimwiki/personal.wiki'},
+        "\{'path': '~/Dropbox/vimwiki/tech.wiki'}
 
 " QFEnter: restores sanity to opening items from the QuickFix window
 " Enter, double-left click: open item in last window
@@ -740,7 +757,7 @@ set wrap
 set formatoptions=qrn1
 set backspace=indent,eol,start
 set shiftround " round indent to multiple of shiftwidth
-set textwidth=90 "lines longer than this will be broken at next whitespace
+set textwidth=80 "lines longer than this will be broken at next whitespace
 if version >= 703   " 7.2 and below don't have colorcolumn
     set colorcolumn=80
 endif
