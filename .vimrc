@@ -669,7 +669,7 @@ let wiki_settings={
     \ }}
 
 " Define all the wikis, with the common settings applied
-let wikis=["personal"]
+let wikis=["personal", "stoicism"]
 let g:vimwiki_list = []
 for wiki_name in wikis
     let wiki=copy(wiki_settings)
