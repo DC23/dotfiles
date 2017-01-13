@@ -903,6 +903,12 @@ nnoremap <silent> <C-i> <C-i>zz
 nnoremap <leader>[ :lprev<CR>
 nnoremap <leader>] :lnext<CR>
 
+" Mappings to insert date stamps
+" Wed July 14, 2017
+nnoremap <leader><leader>d "=strftime('%A %B %d, %Y')<CR>P
+" 07:14:59
+nnoremap <leader><leader>t "=strftime('%T')<CR>P
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Status Line:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
