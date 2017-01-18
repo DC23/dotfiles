@@ -19,7 +19,7 @@ EDITOR="vim"
 export EDITOR
 
 # scriptabit user plugin directory
-if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" ]]; then
+if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "fracture-lmde" ]]; then
     export SCRIPTABIT_USER_PLUGIN_DIR="~/Dropbox/scriptabit_plugins"
 elif [[ $HOSTNAME == "ERIS" ]]; then
     export SCRIPTABIT_USER_PLUGIN_DIR="/mnt/c/Users/Daniel/Dropbox/scriptabit_plugins"
@@ -117,7 +117,7 @@ if [[ $PAWSEY_OS = SLES* ]]; then
 fi
 
 # Debian Hosts
-if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "ERIS" ]]; then
+if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "ERIS"  || $HOSTNAME == "fracture-lmde" ]]; then
     # virtualenv wrapper
     export PROJECT_HOME=$HOME/code
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
