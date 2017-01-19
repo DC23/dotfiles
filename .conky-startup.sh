@@ -1,4 +1,4 @@
 #! /bin/sh -e
-sleep 15
+sleep 20
 conky
 exit 0
