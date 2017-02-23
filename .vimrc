@@ -157,12 +157,12 @@ endif
 " On Windows, Vundle has to be installed manually :(
 if !s:is_windows
     let iCanHazVundle=1
-    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+    let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
     if !filereadable(vundle_readme)
         echo "Installing Vundle.."
         echo ""
         silent !mkdir -p ~/.vim/bundle
-        silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+        silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/Vundle.vim
         let iCanHazVundle=0
     endif
 
@@ -175,7 +175,7 @@ if !s:is_windows
 endif
 
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 " Vim Folder Management:
