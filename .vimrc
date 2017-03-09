@@ -218,7 +218,7 @@ Plugin 'bling/vim-bufferline'
 
 " Autoformat: Code formatting via external programs such as clang-format and
 " astyle
-if has('python') && version >= 704
+if (has('python') || has('python3')) && version >= 704
     Plugin 'Chiel92/vim-autoformat'
 endif
 
@@ -229,7 +229,7 @@ endif
 " let g:jedi#get_definition_command = "<leader>d"
 " let g:jedi#goto_command = "<leader>g"
 " let g:jedi#related_names_command = "<leader>n"
-if has('python')
+if (has('python') || has('python3'))
     Plugin 'davidhalter/jedi-vim'
     let g:jedi#rename_command = "<leader><leader>r"
     let g:jedi#auto_vim_configuration = 0

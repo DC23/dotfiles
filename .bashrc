@@ -135,7 +135,7 @@ if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "ERIS"  || $
     export CC=gcc
 
     # put Anaconda into the path
-    export PATH="$CONDA_INSTALL_DIR/bin:$PATH"
+    # export PATH="$CONDA_INSTALL_DIR/bin:$PATH"
 
     # Use bash-completion, if available. This is not enabled by default
     # on LMDE or Debian.
