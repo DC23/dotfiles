@@ -8,7 +8,7 @@ apt-get install -y vim-gtk meld subversion linux-headers-amd64 python-gpgme libz
 apt-get install -y unzip bzip2 build-essential gcc g++ gfortran openjdk-7-jdk openjdk-7-doc libfreetype6-dev libpng12-dev python-dev python3-dev autoconf
 
 # Extra ASKAPsoft packages for Debian 7 and 8
-apt-get install -y autoconf subversion scons flex bison ant ant-optional unzip bzip2 build-essential gcc g++ gcc-4.9-plugin-dev gfortran openjdk-7-jdk openmpi-bin libopenmpi-dev libfreetype6-dev libpng12-dev python-dev libsqlite3-0 libsqlite3-dev sqlite3 mysql-server mysql-common mysql-client-5.5 libmysqlclient-dev libpq5 libpq-dev postgresql
+apt-get install -y autoconf subversion scons flex bison ant ant-optional unzip bzip2 build-essential gcc g++ gcc-4.9-plugin-dev gfortran openjdk-7-jdk openmpi-bin libopenmpi-dev libfreetype6-dev libpng12-dev python-dev libsqlite3-0 libsqlite3-dev sqlite3 mysql-server mysql-common mysql-client-5.5 libmysqlclient-dev libpq5 libpq-dev postgresql libatlas-dev-base libatlas-dev
 
 # install curl & virtualenvwrapper
 apt-get install -y curl virtualenvwrapper
