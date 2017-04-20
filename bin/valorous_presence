@@ -1,0 +1,4 @@
+#!/bin/bash
+COUNT=$1
+[ -z "$1" ] && COUNT=5
+sb-cast --cast-skill valorousPresence -n $COUNT
