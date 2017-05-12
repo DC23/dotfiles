@@ -309,62 +309,6 @@ let g:buffergator_autoexpand_on_split = 0
 let g:buffergator_split_size = 7
 map <F5> :BuffergatorToggle<cr>
 
-" Python Mode:
-" keys:
-" [[            Jump on previous class or function (normal, visual, operator modes)
-" ]]            Jump on next class or function (normal, visual, operator modes)
-" [M            Jump on previous class or method (normal, visual, operator modes)
-" ]M            Jump on next class or method (normal, visual, operator modes)
-" <leader>r     Run current buffer in python
-Plugin 'klen/python-mode'
-" Using Jedi for autocomplete
-let g:pymode_rope = 0
-
-" Documentation
-" using jedi
-let g:pymode_doc = 0
-"let g:pymode_doc_key = 'K'
-
-"Linting
-let g:pymode_lint = 1
-let g:pymode_lint_hold = 0
-let g:pymode_lint_maxheight = 9
-let g:pymode_lint_minheight = 3
-let g:pymode_lint_on_fly = 0
-let g:pymode_lint_on_write = 0
-let g:pymode_lint_unmodified = 0
-let g:pymode_lint_cwindow = 1
-nmap <F4> :PymodeLint<CR>
-nmap <S-F4> :PymodeLintAuto<CR>:PymodeLint<CR>
-
-" ignore some lint errors
-" Commenting this out as it prevents the autofix pylint from working
-"let g:pymode_lint_ignore = "W0401,E702,C0303"
-
-" Support virtualenv
-let g:pymode_virtualenv = 1
-
-" Enable breakpoints plugin
-let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_bind = '<leader>9'
-let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()'
-
-" syntax highlighting
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
-let g:pymode_syntax_indent_errors = g:pymode_syntax_all
-let g:pymode_syntax_space_errors = g:pymode_syntax_all
-
-let g:pymode_folding = 1
-
-" Python version. Values are 'python', 'python3', & 'disable'
-let g:pymode_python = 'python'
-
-" The run mode doesn't handle breakpoints or newlines correctly
-" Try my bodgy mapping instead
-let g:pymode_run = 0
-nnoremap<F3> :!python %<CR>
-
 " Signature: toggle, display, and navigate marks
 " m[a-zA-Z]    : Toggle mark
 " m<Space>     : Delete all marks
@@ -473,7 +417,7 @@ endif
 " By default, files are checked when first opened, and when a buffer is saved.
 Plugin 'scrooloose/syntastic'
 let g:syntastic_mode_map = {
-    \ "mode": "active",
+    \ "mode": "passive",
     \ "passive_filetypes": ["py", "cpp"] }
 
 " Neocomplete: completion framework
