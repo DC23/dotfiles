@@ -73,8 +73,8 @@ if [[ $HOSTNAME = bragg-gpu || $HOSTNAME = pearcey-* || $HOSTNAME = cherax ]]; t
     alias lp2='module load python/2.7.11;source /apps/python/2.7.11/bin/virtualenvwrapper_lazy.sh;which python'
     alias lp3='module load python/3.5.1;source /apps/python/3.5.1/bin/virtualenvwrapper_lazy.sh;which python'
 
-    #export CONDA_INSTALL_DIR=$DATADIR/miniconda3
-    #export PATH="$CONDA_INSTALL_DIR/bin:$PATH"
+    export CONDA_INSTALL_DIR=$DATADIR/miniconda3
+    export PATH="$CONDA_INSTALL_DIR/bin:$PATH"
 
     #if [[ $HOSTNAME = bragg-l || $HOSTNAME = bragg-l-test || $HOSTNAME = burnet-login ]]; then
         ## For testing the netcdf-profiling code, I need the libioprof.so location in LD_LIBRARY_PATH
