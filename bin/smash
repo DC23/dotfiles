@@ -1,0 +1,5 @@
+#!/bin/bash
+COUNT=$1
+[ -z "$1" ] && COUNT=5
+sb-cast --cast-skill smash --target 7b069a9e-80aa-47ab-99fd-15fae4dd8ba7 -n $COUNT
+
