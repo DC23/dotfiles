@@ -19,7 +19,7 @@ EDITOR="vim"
 export EDITOR
 
 # scriptabit user plugin directory
-if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "fracture-lmde" ]]; then
+if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" ]]; then
     export SCRIPTABIT_USER_PLUGIN_DIR="~/Dropbox/scriptabit_plugins"
 elif [[ $HOSTNAME == "ERIS" ]]; then
     export SCRIPTABIT_USER_PLUGIN_DIR="/mnt/c/Users/Daniel/Dropbox/scriptabit_plugins"
@@ -34,7 +34,7 @@ export PROJECT_HOME=~/projects
 
 # some aliases
 alias ls='ls --group-directories-first --color=auto'
-if [[ $HOSTNAME = FRACTURE-KH || $HOSTNAME = Eris || $HOSTNAME = ASHOK-BT ]]; then
+if [[ $HOSTNAME = CLOUD-KH || $HOSTNAME = Eris || $HOSTNAME = ASHOK-BT ]]; then
     alias ls='ls --color=auto'
 fi
 
@@ -65,8 +65,15 @@ alias ga='git add'
 alias gaa='git add --all'
 alias gps='git push'
 
+# lazy typist shortcuts for initialising the ASKAPsoft environment.
+if [ -f "${HOME}/code/askapsoft/initaskap.sh" ]; then
+    alias ia='source ~/code/askapsoft/initaskap.sh'
+    alias cdcp='cd $ASKAP_ROOT/Code/Components/Services/manager/current'
+    alias cdsms='cd $ASKAP_ROOT/Code/Components/Services/skymodel/current'
+fi
+
 # load some default modules
-if [[ $HOSTNAME = bragg-gpu || $HOSTNAME = pearcey-* || $HOSTNAME = cherax ]]; then
+if [[ $HOSTNAME = bragg-gpu || $HOSTNAME = pearcey-* || $HOSTNAME = ruby ]]; then
     module load vim
     module load git
 
@@ -117,7 +124,7 @@ if [[ $PAWSEY_OS = SLES* ]]; then
 fi
 
 # Debian Hosts
-if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "ERIS"  || $HOSTNAME == "fracture-lmde" ]]; then
+if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "ERIS" ]]; then
     # virtualenv wrapper
     export PROJECT_HOME=$HOME/code
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
@@ -142,17 +149,12 @@ if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "ERIS"  || $
     [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
         . /usr/share/bash-completion/bash_completion
 
-    # lazy typist shortcut for initialising the ASKAPsoft environment.
-    alias ia='source ~/code/askapsoft/initaskap.sh'
-    alias cdcp='cd $ASKAP_ROOT/Code/Components/Services/manager/current'
-    alias cdsms='cd $ASKAP_ROOT/Code/Components/Services/skymodel/current'
-
     # scriptabit
     alias sb='scriptabit'
 fi
 
 # Arch Linux hosts
-if [[ $HOSTNAME == "nibblet" || $HOSTNAME == "puffin" ]]; then
+if [[ $HOSTNAME == "nibblet" || $HOSTNAME == "monkey" ]]; then
     # virtualenv wrapper
     export PROJECT_HOME=$HOME/code
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
