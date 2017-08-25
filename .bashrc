@@ -117,9 +117,9 @@ if [[ $PAWSEY_OS = SLES* ]]; then
     export MPICH_GNI_MALLOC_FALLBACK=enabled
     module load python/2.7.10
     module load java
-    module load gcc/4.8.5
-    module load mpich
-    module unload gcc
+    #module load gcc/4.8.5
+    #module load mpich
+    #module unload gcc
     export JAVA_HOME=$JAVA_PATH
 fi
 
