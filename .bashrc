@@ -110,6 +110,9 @@ if [[ $PAWSEY_OS = cle* ]]; then
     #module load askapdata
     #module load askappipeline
     #module load askapcli
+
+    export LD_PRELOAD=$LD_PRELOAD:/pawsey/cle52up04/apps/gcc/4.9.0/python/2.7.10/lib/libpython2.7.so.1.0
+    export LD_PRELOAD=$LD_PRELOAD:/opt/gcc/4.9.0/snos/lib64/libstdc++.so.6
 fi
 
 # ingest
@@ -117,10 +120,12 @@ if [[ $PAWSEY_OS = SLES* ]]; then
     export MPICH_GNI_MALLOC_FALLBACK=enabled
     module load python/2.7.10
     module load java
-    export JAVA_HOME=$JAVA_PATH
-    module load gcc/4.8.5
+    module swap gcc gcc/4.3.4
     module load mpich
-    #module unload gcc
+    export JAVA_HOME=$JAVA_PATH
+
+    export LD_PRELOAD=$LD_PRELOAD:/pawsey/sles11sp4/apps/gcc/4.3.4/python/2.7.10/lib/libpython2.7.so.1.0
+    export LD_PRELOAD=$LD_PRELOAD:/opt/gcc/4.3.4/snos/lib64/libstdc++.so.6
 fi
 
 # Debian Hosts
