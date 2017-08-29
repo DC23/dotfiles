@@ -13,7 +13,7 @@ yaourt --needed -S pycharm-community
 yaourt --needed -S pacaur 
 
 # Chess apps from Aur
-yaourt --needed -S stockfish scid_vs_pc
+#yaourt --needed -S stockfish scid_vs_pc
 
 # Other Aur apps
 yaourt --needed -S vertex-themes

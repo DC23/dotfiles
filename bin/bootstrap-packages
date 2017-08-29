@@ -1,5 +1,4 @@
 #!/bin/sh
-./reflect-mirrors
 pacman -Syyu
 
 # Core packages
