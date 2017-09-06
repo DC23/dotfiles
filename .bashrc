@@ -73,12 +73,12 @@ if [ -f "${HOME}/code/askapsoft/initaskap.sh" ]; then
 fi
 
 # load some default modules
-if [[ $HOSTNAME = bragg-gpu || $HOSTNAME = pearcey-* || $HOSTNAME = ruby ]]; then
+if [[ $HOSTNAME = bracewell || $HOSTNAME = pearcey-* || $HOSTNAME = ruby ]]; then
     module load vim
     module load git
 
     alias lp2='module load python/2.7.11;source /apps/python/2.7.11/bin/virtualenvwrapper_lazy.sh;which python'
-    alias lp3='module load python/3.5.1;source /apps/python/3.5.1/bin/virtualenvwrapper_lazy.sh;which python'
+    alias lp3='module load python/3.6.1;source /apps/python/3.6.1/bin/virtualenvwrapper_lazy.sh;which python'
 
     export CONDA_INSTALL_DIR=$DATADIR/miniconda3
     export PATH="$CONDA_INSTALL_DIR/bin:$PATH"
