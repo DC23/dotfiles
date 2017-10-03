@@ -19,7 +19,7 @@ EDITOR="vim"
 export EDITOR
 
 # scriptabit user plugin directory
-if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" ]]; then
+if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "ashok-bt" ]]; then
     export SCRIPTABIT_USER_PLUGIN_DIR="~/Dropbox/scriptabit_plugins"
 elif [[ $HOSTNAME == "ERIS" ]]; then
     export SCRIPTABIT_USER_PLUGIN_DIR="/mnt/c/Users/Daniel/Dropbox/scriptabit_plugins"
@@ -30,11 +30,11 @@ export CONDA_INSTALL_DIR=$HOME/bin/anaconda
 
 # for virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=~/projects
+export PROJECT_HOME=~/code
 
 # some aliases
 alias ls='ls --group-directories-first --color=auto'
-if [[ $HOSTNAME = CLOUD-KH || $HOSTNAME = Eris || $HOSTNAME = ASHOK-BT ]]; then
+if [[ $HOSTNAME = CLOUD-KH || $HOSTNAME = Eris ]]; then
     alias ls='ls --color=auto'
 fi
 
@@ -127,7 +127,7 @@ if [[ $PAWSEY_OS = SLES* ]]; then
 fi
 
 # Debian Hosts
-if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "ERIS" ]]; then
+if [[ $HOSTNAME == "ashok-bt" || $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "ERIS" ]]; then
     # virtualenv wrapper
     export PROJECT_HOME=$HOME/code
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
