@@ -127,11 +127,14 @@ if [[ $PAWSEY_OS = SLES11* ]]; then
 fi
 
 if [[ $PAWSEY_OS = SLES12* ]]; then
-    #module load python/2.7.10
-    #module load java
-    #module swap gcc gcc/4.3.4
-    #module load mpich
-    #export JAVA_HOME=$JAVA_PATH
+    module load sandybridge
+    module load python/2.7.10
+    module load java
+    export JAVA_HOME=$JAVA_PATH
+    module load gcc/4.8.5
+    module load mvapich
+    module load scons
+    module load ant
 
     #export LD_PRELOAD=$LD_PRELOAD:/pawsey/sles11sp4/apps/gcc/4.3.4/python/2.7.10/lib/libpython2.7.so.1.0
     #export LD_PRELOAD=$LD_PRELOAD:/opt/gcc/4.3.4/snos/lib64/libstdc++.so.6
