@@ -1,6 +1,7 @@
 if has('gui_running')
     set background=dark
-    color base16-ateliersavanna
+    "color base16-ateliersavanna
+    color badwolf
 elseif has('win32') || has('win64')
     "xoriadark looks terrible in a DOS shell
     color default
