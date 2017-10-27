@@ -7,8 +7,8 @@
 " Utility Functions:
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! Enbiggen()
-    set columns=190
-    set lines=62
+    set columns=214
+    set lines=83
 endfunction
 
 function! EnsureExists(path)
