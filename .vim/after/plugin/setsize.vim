@@ -1,4 +1,8 @@
 if has('gui_running')
-    set lines=67
-    set columns=165
+    if hostname() == 'belkar'
+        call Enbiggen()
+    else
+        set lines=67
+        set columns=165
+    endif
 endif
