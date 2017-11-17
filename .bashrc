@@ -68,8 +68,7 @@ alias gps='git push'
 # lazy typist shortcuts for initialising the ASKAPsoft environment.
 if [ -f "${HOME}/code/askapsoft/initaskap.sh" ]; then
     alias ia='source ~/code/askapsoft/initaskap.sh'
-    alias cdcp='cd $ASKAP_ROOT/Code/Components/Services/manager/current'
-    alias cdsms='cd $ASKAP_ROOT/Code/Components/Services/skymodel/current'
+    alias cdsms='cd $ASKAP_ROOT/Code/Components/Services/skymodel/service'
 fi
 
 # load some default modules
