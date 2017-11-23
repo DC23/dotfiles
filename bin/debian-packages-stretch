@@ -2,7 +2,7 @@
 # Run as root or with sudo
 
 # Packages for setting up base Debian installs
-apt-get install -y vim-gtk meld subversion linux-headers-amd64 python-gpgme python3-dev exuberant-ctags terminator fonts-inconsolata ttf-dejavu fonts-liberation tree clang-format astyle
+apt-get install -y vim-gtk meld subversion linux-headers-amd64 python-gpgme python3-dev exuberant-ctags terminator fonts-inconsolata ttf-dejavu fonts-liberation tree clang-format astyle gdebi
 
 # Base dev packages
 apt-get install -y unzip bzip2 build-essential gcc g++ gfortran openjdk-8-jdk openjdk-8-doc libfreetype6-dev libpng-dev python-dev python3-dev autoconf
