@@ -1,0 +1,13 @@
+#/bin/bash
+# Set up the X11 stuff ...
+XSOCK=/tmp/.X11-unix
+XAUTH=/tmp/.docker.xauth
+xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
+
+# run the specified image
+docker run \
+ -ti \
+ --rm \
+ -v $XSOCK:$XSOCK -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH \
+ --mount type=bind,source="$(pwd)"/$1,target=/home/askapuser/code \
+ $1
