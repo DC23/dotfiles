@@ -8,6 +8,7 @@ xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
 docker run \
  -ti \
  --rm \
- -v $XSOCK:$XSOCK -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH \
- --mount type=bind,source="$(pwd)"/$1,target=/home/askapuser/code \
+ --volume $XSOCK:$XSOCK -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH \
+ --mount type=bind,source="$(pwd)"/$1,target=/home/askap/code \
+ --mount type=bind,source="$HOME/.subversion/",target=/home/askap/.subversion/ \
  $1
