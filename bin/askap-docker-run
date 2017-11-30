@@ -6,7 +6,9 @@ xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
 
 # run the specified image
 docker run \
- -ti \
+ --hostname $1 \
+ --tty \
+ --interactive \
  --rm \
  --volume $XSOCK:$XSOCK -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH \
  --mount type=bind,source="$(pwd)"/$1,target=/home/askap/code \
