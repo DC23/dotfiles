@@ -780,6 +780,9 @@ let xml_syntax_folding=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ","
 
+" Execute current line in shell
+nmap <leader>x :exec '!'.getline('.')<CR>
+
 " Code folding options
 nmap <leader>f0 :set foldlevel=0<CR>
 nmap <leader>f1 :set foldlevel=1<CR>
