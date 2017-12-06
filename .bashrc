@@ -170,7 +170,7 @@ if [[ $HOSTNAME == "ashok-bt" || $HOSTNAME == "pango" || $HOSTNAME == "belkar" |
 fi
 
 # Arch Linux hosts
-if [[ $HOSTNAME == "nibblet" || $HOSTNAME == "monkey" ]]; then
+if [[ $HOSTNAME == "scratch" || $HOSTNAME == "monkey" ]]; then
     # virtualenv wrapper
     export PROJECT_HOME=$HOME/code
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
