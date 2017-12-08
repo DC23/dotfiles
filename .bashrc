@@ -17,7 +17,7 @@ export PATH="~/bin:$PATH"
 export GREP_COLOR="1;33"
 export EDITOR="vim"
 
-export ASKAP_RELEASE_DIR="${HOME}/code/askap-dockerfiles/binary/askapbuild/"
+export ASKAP_DOCKER_BASE_DIR="${HOME}/code/askap-dockerfiles/"
 
 # scriptabit user plugin directory
 if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "ashok-bt" ]]; then
