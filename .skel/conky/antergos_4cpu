@@ -1,0 +1,105 @@
+#========================================================================
+# Conky-Linux
+# author: Brahim Salem-Tunisia
+#========================================================================
+
+background yes
+update_interval 3
+total_run_times 0
+
+cpu_avg_samples 1
+net_avg_samples 2
+temperature_unit celsius
+
+double_buffer yes
+no_buffers yes
+text_buffer_size 2048
+
+gap_x 10
+gap_y 20
+#minimum_size 190 350
+maximum_width 380
+own_window yes
+#own_window_type override
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,sticky,skip_taskbar,skip_pager,below
+border_inner_margin 0
+border_outer_margin 0
+alignment tl
+
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+
+override_utf8_locale yes
+use_xft yes
+#xftfont DejaVu Serif:size=9
+xftfont DejaVu Sans Mono:size=10
+#xftfont Ubuntu:size=10
+xftalpha 0.9
+uppercase no
+
+# colours
+default_color steelblue
+default_shade_color black
+default_outline_color white
+color0 FFFFFF       # clock
+color1 LightSteelBlue    # section headings
+color2 00AAFF       # number values
+color3 CCCCCC		# subtitles
+color4 BBBBBB		# bar graphs
+color5 BBBBBB       # info level 1
+color6 AAAAAA       # info level 2
+color7 888888       # info level 3
+color8 666666       # info level 4
+color9 4A4A4A       # info level 5
+
+TEXT
+${color1}${font :size=14}Antergos: Arch, but nicer ${hr 2}
+${color0}${font :Bold:size=28} $alignc ${time %H}:${time %M}
+${color5}${font :Bold:size=14} ${voffset -20}$alignc ${time %h} ${time %e} - ${time %Y}${font :Bold:size=08}
+${color6}$alignc${time %A}
+${color7}$alignc Uptime: $uptime
+${color7}$sysname $kernel $nodename    $machine
+
+${color1}CPU & Memory $hr:
+${color3}Core 1:    ${color4}${cpubar cpu1 8,145} $alignr${color2}${cpu cpu1}%@${freq_g cpu1}GHz
+${color3}Core 2:    ${color4}${cpubar cpu2 8,145} $alignr${color2}${cpu cpu2}%@${freq_g cpu2}GHz
+${color3}Core 3:    ${color4}${cpubar cpu3 8,145} $alignr${color2}${cpu cpu3}%@${freq_g cpu3}GHz
+${color3}Core 4:    ${color4}${cpubar cpu4 8,145} $alignr${color2}${cpu cpu4}%@${freq_g cpu4}GHz
+${color4}${cpugraph cpu0 5faf00 05faf0}
+${color4}${cpugraph cpu1 25,150 5faf00 05faf0} $alignr${cpugraph cpu2 25,150 5faf00 05faf0}
+${color4}${cpugraph cpu3 25,150 5faf00 05faf0} $alignr${cpugraph cpu4 25,150 5faf00 05faf0}
+
+${color3}Ram ${alignr}${color2}$mem / $memmax ($memperc%)
+${color4}${membar 8}
+${color3}Swap ${alignr}${color2}$swap / $swapmax ($swapperc%)
+${color4}${swapbar 8}
+${color1}$hr:
+${color3}Processes: ${color2}${processes}    ${color3}Running: ${color2}${running_processes}
+${color3}Core Temps: ${color2}${execi 8 sensors | grep 'Core 0' | cut -c13-19 | sed '/^$/d'}C  ${execi 8 sensors | grep 'Core 1' | cut -c13-19 | sed '/^$/d'}C
+
+${color3}Highest CPU
+${color5}${top name 1}$alignr${top cpu 1}
+${color6}${top name 2}$alignr${top cpu 2}
+${color7}${top name 3}$alignr${top cpu 3}
+${color8}${top name 4}$alignr${top cpu 4}
+${color9}${top name 5}$alignr${top cpu 5}
+${color1}$hr:
+${color3}Highest Memory
+${color5}${top_mem name 1}$alignr${top_mem mem 1}
+${color6}${top_mem name 2}$alignr${top_mem mem 2}
+${color7}${top_mem name 3}$alignr${top_mem mem 3}
+${color8}${top_mem name 4}$alignr${top_mem mem 4}
+${color9}${top_mem name 5}$alignr${top_mem mem 5}
+
+${color1}Drives $hr:
+${color3}Root:           ${alignr}${color2}${fs_used /} / ${fs_size /}${color4}${alignr} ${fs_bar 8,75 /} ${color2}(${fs_used_perc /}%)
+${color3}Read-> ${color2}${diskio_read}/s ${alignr}${color2}${diskio_write}/s ${color3}<-Write
+${color4}${diskiograph_read 25,150 5faf00 05faf0} ${alignr}${color4}${diskiograph_write 25,150 5faf00 05faf0}$color
+
+#${color1}Battery Status $hr
+#${color1}${alignr} ${battery BAT0} $alignr
+#${color0}${battery_bar BAT0}
