@@ -1,0 +1,57 @@
+Arch Linux
+	package cache
+		remove all packages not currently installed
+			sudo pacman -Sc
+		delete all but last 3 packages
+			sudo paccache -r
+		remove all cached uninstalled packages
+			sudo paccache -ruk0
+Docker
+	Images
+		List Primary images
+			docker image ls
+		List all
+			docker image ls -a
+		List dangling
+			docker image ls -f dangling=true
+		Remove
+			docker rmi <image>
+		Remove dangling
+			docker rmi $(docker images -f dangling=true -q)
+		Remove all
+			docker rmi $(docker images -a -q)
+	Containers
+		List
+			docker ps
+		List all
+			docker ps -a
+		List exited
+			docker ps -a -f status=exited
+		Remove exited
+			docker rm $(docker ps -a -f status=exited -q)
+		Remove all
+			docker stop $(docker ps -a -q)
+			: stop all containers
+			docker rm $(docker ps -a -q)
+			: remove them
+	Volumes
+		List
+			docker volume ls
+		Remove
+			docker volume rm <name>
+		List dangling
+			docker volume ls -f dangling=true
+		Remove dangling
+			docker volume rm $(docker volume ls -f dangling=true -q)
+	System
+		Show disk usage
+			docker system df -v
+		Get real-time events
+			docker system events
+		Remove unused data
+			dangling images & stopped containers
+				docker system prune
+			all unused images, not just dangling
+				docker system prune --all
+			prune volumes
+				docker system prune --volumes
