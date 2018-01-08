@@ -189,7 +189,7 @@ if [[ $HOSTNAME == "scratch" || $HOSTNAME == "monkey" ]]; then
     export CC=gcc
 
     # make sure keychain is running
-    eval $(keychain --noask --eval --quiet id_rsa)
+    eval $(keychain --eval --quiet id_rsa)
 fi
 
 export GCC_COLORS=1
