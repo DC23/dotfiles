@@ -181,14 +181,15 @@ if [[ $HOSTNAME == "scratch" || $HOSTNAME == "monkey" ]]; then
 
     alias pacman="pacman --color=always"
     alias gvimb="gvim +'call Enbiggen()'"
-
     export HISTCONTROL=ignoreboth:erasedups
-
     export OMP_NUM_THREADS=2
     export OPENCV_HOME=/usr/include
     export BOOST_HOME=/usr/include
     export BOOST_ROOT=/usr/lib/
     export CC=gcc
+
+    # make sure keychain is running
+    eval $(keychain --noask --eval --quiet id_rsa)
 fi
 
 export GCC_COLORS=1
