@@ -90,11 +90,11 @@ fi
 # Galaxy nodes
 if [[ $PAWSEY_OS = cle* ]]; then
     module swap PrgEnv-cray PrgEnv-gnu
-    module swap gcc/4.8.2 gcc/4.9.0
+    module swap gcc/7.2.0 gcc/4.9.3
     module use /group/askap/modulefiles
 
     # default Python is too old
-    module load python/2.7.10
+    module load python/2.7.14
 
     # Building askapsoft requires Java
     module load java
