@@ -902,8 +902,8 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 " make j and k move by screen lines
-nnoremap j gj
-nnoremap k gk
+"nnoremap j gj
+"nnoremap k gk
 
 " enable the mouse, but hide it unless being used
 set mouse=a
