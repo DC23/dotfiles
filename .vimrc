@@ -211,6 +211,7 @@ Plugin 'alfredodeza/pytest.vim'
 
 " Airline: fancy status line
 Plugin 'bling/vim-airline'
+    let g:airline_powerline_fonts = 1
 
 " Bufferline: fancy buffer manager
 Plugin 'bling/vim-bufferline'
