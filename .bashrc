@@ -66,7 +66,7 @@ fi
 
 # Alias some programs so that they don't spam a console with warnings that I don't care about
 if command_exists gvim ; then
-    alias gvim='gvim 2>/dev/null'
+    alias gvim="gvim +'call Enbiggen()'"
     alias gvim-update='gvim +PluginClean +PluginInstall! +qall'
     alias vim-update='vim +PluginClean +PluginInstall! +qall'
 fi
