@@ -57,6 +57,7 @@ alias git='git --no-pager'
 if [ -f "${HOME}/trunk/initaskap.sh" ]; then
     alias ia='source ~/trunk/initaskap.sh'
     alias cdsms='cd $ASKAP_ROOT/Code/Components/Services/skymodel/service'
+    alias cdc='cd $ASKAP_ROOT/Code/Components/CP/pipelinetasks/current'
 fi
 
 # Use bash-completion, if available. This is not enabled by default
