@@ -238,6 +238,9 @@ if (has('python') || has('python3'))
     let g:jedi#completions_enabled = 0
 endif
 
+" PugJS support
+Plugin 'digitaltoad/vim-pug'
+
 " Easygrep: improved usability of multifile search and replace.
 Plugin 'dkprice/vim-easygrep'
 
@@ -370,6 +373,12 @@ if version >= 702
     autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#3a3a3a ctermbg=237
     autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#585858 ctermbg=240
 endif
+
+" HTML5 support
+Plugin 'othree/html5.vim'
+
+" Vue syntax support
+Plugin 'posva/vim-vue'
 
 " DelimitMate: insert mode auto-completion for quotes, parens, brackets, etc
 Plugin 'Raimondi/delimitMate'
