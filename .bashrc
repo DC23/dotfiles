@@ -175,7 +175,6 @@ if [[ $HOSTNAME == "scratch" || $HOSTNAME == "monkey" ]]; then
     export BOOST_HOME=/usr/include
     export BOOST_ROOT=/usr/lib/
     export CC=gcc
-    export
 
     # make sure keychain is running
     eval $(keychain --eval --quiet id_rsa)
