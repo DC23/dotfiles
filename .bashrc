@@ -20,7 +20,7 @@ export EDITOR="vim"
 export ASKAP_DOCKER_BASE_DIR="${HOME}/code/askap-dockerfiles/"
 
 # scriptabit user plugin directory
-if [[ $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "ashok-bt" ]]; then
+if [[ $HOSTNAME == "monkey" || $HOSTNAME == "ashok-bt" ]]; then
     export SCRIPTABIT_USER_PLUGIN_DIR="~/Dropbox/scriptabit_plugins"
 elif [[ $HOSTNAME == "ERIS" ]]; then
     export SCRIPTABIT_USER_PLUGIN_DIR="/mnt/c/Users/Daniel/Dropbox/scriptabit_plugins"
@@ -113,19 +113,7 @@ if [[ $PAWSEY_OS = cle* ]]; then
     #export LD_PRELOAD=$LD_PRELOAD:/opt/gcc/4.9.0/snos/lib64/libstdc++.so.6
 fi
 
-# ingest
-if [[ $PAWSEY_OS = SLES11* ]]; then
-    export MPICH_GNI_MALLOC_FALLBACK=enabled
-    module load python/2.7.10
-    module load java
-    module swap gcc gcc/4.3.4
-    module load mpich
-    export JAVA_HOME=$JAVA_PATH
-
-    #export LD_PRELOAD=$LD_PRELOAD:/pawsey/sles11sp4/apps/gcc/4.3.4/python/2.7.10/lib/libpython2.7.so.1.0
-    #export LD_PRELOAD=$LD_PRELOAD:/opt/gcc/4.3.4/snos/lib64/libstdc++.so.6
-fi
-
+# Galaxy-ingest
 if [[ $PAWSEY_OS = SLES12* ]]; then
     module load sandybridge
     module load python/2.7.10
@@ -141,7 +129,7 @@ if [[ $PAWSEY_OS = SLES12* ]]; then
 fi
 
 # Debian Hosts
-if [[ $HOSTNAME == "ashok-bt" || $HOSTNAME == "pango" || $HOSTNAME == "belkar" || $HOSTNAME == "ERIS" ]]; then
+if [[ $HOSTNAME == "belkar" ]]; then
     # virtualenv wrapper
     export PROJECT_HOME=$HOME/code
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
@@ -187,6 +175,7 @@ if [[ $HOSTNAME == "scratch" || $HOSTNAME == "monkey" ]]; then
     export BOOST_HOME=/usr/include
     export BOOST_ROOT=/usr/lib/
     export CC=gcc
+    export
 
     # make sure keychain is running
     eval $(keychain --eval --quiet id_rsa)
