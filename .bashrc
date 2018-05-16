@@ -129,7 +129,7 @@ if [[ $PAWSEY_OS = SLES12* ]]; then
 fi
 
 # Debian Hosts
-if [[ $HOSTNAME == "belkar" ]]; then
+if [[ $HOSTNAME == "placeholder" ]]; then
     # virtualenv wrapper
     export PROJECT_HOME=$HOME/code
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
@@ -159,7 +159,7 @@ if [[ $HOSTNAME == "belkar" ]]; then
 fi
 
 # Arch Linux hosts
-if [[ $HOSTNAME == "scratch" || $HOSTNAME == "monkey" ]]; then
+if [[ $HOSTNAME == "scratch" || $HOSTNAME == "monkey" || $HOSTNAME == "belkar" ]]; then
     # virtualenv wrapper
     export PROJECT_HOME=$HOME/code
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
