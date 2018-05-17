@@ -27,7 +27,7 @@ elif [[ $HOSTNAME == "ERIS" ]]; then
 fi
 
 # The default Anaconda location
-export CONDA_INSTALL_DIR=$HOME/bin/anaconda
+#export CONDA_INSTALL_DIR=$HOME/bin/anaconda3
 
 # for virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
@@ -178,6 +178,12 @@ if [[ $HOSTNAME == "scratch" || $HOSTNAME == "monkey" || $HOSTNAME == "belkar" ]
 
     # make sure keychain is running
     eval $(keychain --eval --quiet id_rsa)
+fi
+
+# ashok-bt
+if [[ $HOSTNAME == "ashok-bt" ]]; then
+    export CONDA_INSTALL_DIR=$HOME/anaconda3
+    export PATH="$CONDA_INSTALL_DIR/bin:$PATH"
 fi
 
 export GCC_COLORS=1
