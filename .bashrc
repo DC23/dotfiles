@@ -184,6 +184,10 @@ fi
 if [[ $HOSTNAME == "ashok-bt" ]]; then
     export CONDA_INSTALL_DIR=$HOME/anaconda3
     export PATH="$CONDA_INSTALL_DIR/bin:$PATH"
+
+    # make sure keychain is running
+    /usr/bin/keychain $HOME/.ssh/id_rsa
+    source $HOME/.keychain/$HOSTNAME-sh
 fi
 
 export GCC_COLORS=1
