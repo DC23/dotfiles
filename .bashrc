@@ -185,7 +185,7 @@ if [[ $HOSTNAME == "ashok-bt" ]]; then
     export CONDA_INSTALL_DIR=$HOME/anaconda3
     . $CONDA_INSTALL_DIR/etc/profile.d/conda.sh
 
-    VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+    #VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
     if [ -f "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" ]; then
         source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
     fi
