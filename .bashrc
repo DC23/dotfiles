@@ -183,7 +183,12 @@ fi
 # ashok-bt
 if [[ $HOSTNAME == "ashok-bt" ]]; then
     export CONDA_INSTALL_DIR=$HOME/anaconda3
-    export PATH="$CONDA_INSTALL_DIR/bin:$PATH"
+    . $CONDA_INSTALL_DIR/etc/profile.d/conda.sh
+
+    VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+    if [ -f "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" ]; then
+        source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+    fi
 
     # make sure keychain is running
     /usr/bin/keychain $HOME/.ssh/id_rsa
