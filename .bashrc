@@ -26,9 +26,6 @@ elif [[ $HOSTNAME == "ERIS" ]]; then
     export SCRIPTABIT_USER_PLUGIN_DIR="/mnt/c/Users/Daniel/Dropbox/scriptabit_plugins"
 fi
 
-# The default Anaconda location
-#export CONDA_INSTALL_DIR=$HOME/bin/anaconda3
-
 # for virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=~/code
@@ -165,6 +162,12 @@ if [[ $HOSTNAME == "scratch" || $HOSTNAME == "monkey" || $HOSTNAME == "belkar" ]
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
     if [ -f "/usr/bin/virtualenvwrapper.sh" ]; then
         source /usr/bin/virtualenvwrapper.sh
+    fi
+
+    export CONDA_INSTALL_DIR=$HOME/bin/anaconda
+    CONDA_INIT=$CONDA_INSTALL_DIR/etc/profile.d/conda.sh
+    if [ -f $CONDA_INIT ]; then
+        . $CONDA_INIT
     fi
 
     alias pacman="pacman --color=always"
