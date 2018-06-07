@@ -76,7 +76,6 @@ if [[ $HOSTNAME = bracewell || $HOSTNAME = pearcey-* || $HOSTNAME = ruby ]]; the
 
     alias lp2='module load python/2.7.11;source /apps/python/2.7.11/bin/virtualenvwrapper_lazy.sh;which python'
     alias lp3='module load python/3.6.1;source /apps/python/3.6.1/bin/virtualenvwrapper_lazy.sh;which python'
-    alias load_conda='export CONDA_INSTALL_DIR=$DATADIR/miniconda3;export PATH="$CONDA_INSTALL_DIR/bin:$PATH";which python'
 
     #if [[ $HOSTNAME = bragg-l || $HOSTNAME = bragg-l-test || $HOSTNAME = burnet-login ]]; then
         ## For testing the netcdf-profiling code, I need the libioprof.so location in LD_LIBRARY_PATH
@@ -143,9 +142,6 @@ if [[ $HOSTNAME == "placeholder" ]]; then
     #export BOOST_HOME=/usr/include/boost
     export CC=gcc
 
-    # put Anaconda into the path
-    #export PATH="$CONDA_INSTALL_DIR/bin:$PATH"
-
     # Use bash-completion, if available. This is not enabled by default
     # on LMDE or Debian.
     [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
@@ -164,7 +160,7 @@ if [[ $HOSTNAME == "scratch" || $HOSTNAME == "monkey" || $HOSTNAME == "belkar" ]
         source /usr/bin/virtualenvwrapper.sh
     fi
 
-    export CONDA_INSTALL_DIR=$HOME/bin/anaconda
+    CONDA_INSTALL_DIR=$HOME/bin/anaconda
     CONDA_INIT=$CONDA_INSTALL_DIR/etc/profile.d/conda.sh
     if [ -f $CONDA_INIT ]; then
         . $CONDA_INIT
@@ -185,8 +181,11 @@ fi
 
 # ashok-bt
 if [[ $HOSTNAME == "ashok-bt" ]]; then
-    export CONDA_INSTALL_DIR=$HOME/anaconda3
-    . $CONDA_INSTALL_DIR/etc/profile.d/conda.sh
+    CONDA_INSTALL_DIR=$HOME/anaconda3
+    CONDA_INIT=$CONDA_INSTALL_DIR/etc/profile.d/conda.sh
+    if [ -f $CONDA_INIT ]; then
+        . $CONDA_INIT
+    fi
 
     #VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
     if [ -f "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" ]; then
