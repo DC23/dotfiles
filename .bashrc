@@ -125,7 +125,7 @@ if [[ $PAWSEY_OS = SLES12* ]]; then
 fi
 
 # Debian Hosts
-if [[ $HOSTNAME == "placeholder" ]]; then
+if [[ $HOSTNAME == "mmonkey" ]]; then
     # virtualenv wrapper
     export PROJECT_HOME=$HOME/code
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
@@ -137,6 +137,12 @@ if [[ $HOSTNAME == "placeholder" ]]; then
 
     export HISTCONTROL=ignoreboth:erasedups
 
+    CONDA_INSTALL_DIR=$HOME/bin/anaconda
+    CONDA_INIT=$CONDA_INSTALL_DIR/etc/profile.d/conda.sh
+    if [ -f $CONDA_INIT ]; then
+        . $CONDA_INIT
+    fi
+
     #export OMP_NUM_THREADS=2
     #export OPENCV_HOME=/usr/include
     #export BOOST_HOME=/usr/include/boost
@@ -146,9 +152,6 @@ if [[ $HOSTNAME == "placeholder" ]]; then
     # on LMDE or Debian.
     [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
         . /usr/share/bash-completion/bash_completion
-
-    # scriptabit
-    alias sb='scriptabit'
 fi
 
 # Arch Linux hosts
