@@ -175,8 +175,10 @@ if [[ $HOSTNAME == "scratch" || $HOSTNAME == "monkey" || $HOSTNAME == "belkar" ]
     export BOOST_ROOT=/usr/lib/
     export CC=gcc
 
-    # make sure keychain is running
-    eval $(keychain --eval --quiet id_rsa)
+    if command_exists keychain ; then
+        # make sure keychain is running
+        eval $(keychain --eval --quiet id_rsa)
+    fi
 fi
 
 # ashok-bt
