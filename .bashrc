@@ -69,6 +69,11 @@ if [ -f "${HOME}/code/askapsoft/initaskap.sh" ]; then
     alias cdsms='cd $ASKAP_ROOT/Code/Components/Services/skymodel/service'
 fi
 
+if command_exists pipenv ; then
+    eval "$(pipenv --completion)"
+fi
+
+
 # load some default modules
 if [[ $HOSTNAME = bracewell || $HOSTNAME = pearcey-* || $HOSTNAME = ruby ]]; then
     module load vim
