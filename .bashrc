@@ -70,7 +70,7 @@ if [ -f "${HOME}/code/askapsoft/initaskap.sh" ]; then
 fi
 
 if command_exists pipenv ; then
-    eval "$(pipenv --completion)"
+    eval "$(pipenv --completion 2>/dev/null)"
 fi
 
 
