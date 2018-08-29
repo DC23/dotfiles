@@ -148,9 +148,6 @@ if [[ $HOSTNAME == "monkey" ]]; then
         . $CONDA_INIT
     fi
 
-    #export OMP_NUM_THREADS=2
-    #export OPENCV_HOME=/usr/include
-    #export BOOST_HOME=/usr/include/boost
     export CC=gcc
 
     # Use bash-completion, if available. This is not enabled by default
