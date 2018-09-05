@@ -289,7 +289,7 @@ Plugin 'guns/xterm-color-table.vim'
 
 " Honza Snippet Collection: large and actively developed snippet collection that
 " works with neosnippet
-Plugin 'honza/vim-snippets'
+"Plugin 'honza/vim-snippets'
 
 " Buffergator: list, select and switch between buffers
 " F5 to open buffer window
@@ -509,23 +509,23 @@ let g:syntastic_mode_map = {
 " C-k: select and expand a snippet from the neocomplete popup
 " C-k: jump to next field in the snippet
 " tab: select/jump to next field
-Plugin 'Shougo/neosnippet.vim'
-Plugin 'Shougo/neosnippet-snippets'
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+"Plugin 'Shougo/neosnippet.vim'
+"Plugin 'Shougo/neosnippet-snippets'
+"imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"xmap <C-k>     <Plug>(neosnippet_expand_target)
 " SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-            \ "\<Plug>(neosnippet_expand_or_jump)"
-            \: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-            \ "\<Plug>(neosnippet_expand_or_jump)"
-            \: "\<TAB>"
+"imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+            "\ "\<Plug>(neosnippet_expand_or_jump)"
+            "\: pumvisible() ? "\<C-n>" : "\<TAB>"
+"smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+            "\ "\<Plug>(neosnippet_expand_or_jump)"
+            "\: "\<TAB>"
 
 " For snippet_complete marker.
-if has('conceal')
-    set conceallevel=2 concealcursor=i
-endif
+"if has('conceal')
+    "set conceallevel=2 concealcursor=i
+"endif
 
 " Enable snipMate compatibility feature.
 "let g:neosnippet#enable_snipmate_compatibility = 1
