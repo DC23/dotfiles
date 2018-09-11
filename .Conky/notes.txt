@@ -1,0 +1,2 @@
+conky
+dash cc
