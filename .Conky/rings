@@ -51,8 +51,6 @@ lua_draw_hook_pre clock_rings
 
 TEXT
 ${font Santana:size=12}  Root   ${fs_used /} / ${fs_size /}
-${voffset 105}${goto 123}${voffset -10}${font}
-${voffset -28}${goto 268}${hr 2}
-${voffset -70}${goto 278}${cpugraph 50,285 d5dcde ffffff} #${voffset -18} ${alignr} ${execi 60 ~/.Conky/gmailnotify.sh}
-${voffset 16}${goto 285}${time %A, %d %B %Y}
-#${font Santana:size=14}${voffset -120}${goto 300}BATTERY     ${battery BAT0}
+${voffset 116}${goto 268}${hr 2}
+${voffset -70}${goto 278}${cpugraph 50,285 d5dcde ffffff}
+${voffset 5}${goto 292}${time %A, %d %B %Y}
