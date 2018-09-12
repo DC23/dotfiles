@@ -201,6 +201,7 @@ settings_table = {
         start_angle=84,
         end_angle=96
     },
+    -- Disk usage: root
     {
         name='fs_used_perc',
         arg='/',
