@@ -54,5 +54,3 @@ Processes: ${alignr}${running_processes}/${processes}
 
 ${top name 1} ${alignr}${top cpu 1}
 ${top name 2} ${alignr}${top cpu 2}
-#${top name 3} ${alignr}${top cpu 3}
-#${top name 4} ${alignr}${top cpu 4}

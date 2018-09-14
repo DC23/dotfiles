@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cat ~/.Conky/notes.txt | sed 's/^/ \${color #ddddff}x  \$color /g'
+cat ~/.Conky2cpu/notes.txt | sed 's/^/ \${color #ddddff}x  \$color /g'
