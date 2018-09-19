@@ -50,7 +50,7 @@ lua_load ~/.Conky2cpu/clock_rings.lua
 lua_draw_hook_pre clock_rings
 
 TEXT
-${voffset 116}${goto 268}${hr 2}
+${voffset 138}${goto 268}${hr 2}
 ${voffset -70}${goto 278}${cpugraph 50,285 d5dcde ffffff}
-${voffset 5}${goto 292}${time %A, %d %B %Y}
+${voffset -2}${goto 292}${time %A, %d %B %Y}
 #${goto 292}${font Santana:size=12}  Root   ${fs_used /} / ${fs_size /}
