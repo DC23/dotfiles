@@ -63,6 +63,9 @@ alias ga='git add'
 alias gaa='git add --all'
 alias gps='git push'
 
+# alias `pandoc` to the docker container
+alias pandoc='docker run -ti --rm -v ${PWD}:/source --rm silviof/docker-pandoc'
+
 # lazy typist shortcuts for initialising the ASKAPsoft environment.
 if [ -f "${HOME}/code/askapsoft/initaskap.sh" ]; then
     alias ia='source ~/code/askapsoft/initaskap.sh'
