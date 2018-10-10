@@ -197,24 +197,6 @@ if [[ $HOSTNAME == "scratch" || $HOSTNAME == "belkar" ]]; then
     fi
 fi
 
-# ashok-bt
-if [[ $HOSTNAME == "ashok-bt" ]]; then
-    CONDA_INSTALL_DIR=$HOME/anaconda3
-    CONDA_INIT=$CONDA_INSTALL_DIR/etc/profile.d/conda.sh
-    if [ -f $CONDA_INIT ]; then
-        . $CONDA_INIT
-    fi
-
-    #VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-    if [ -f "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" ]; then
-        source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-    fi
-
-    # make sure keychain is running
-    /usr/bin/keychain $HOME/.ssh/id_rsa
-    source $HOME/.keychain/$HOSTNAME-sh
-fi
-
 export GCC_COLORS=1
 
 # Alias some programs so that they don't spam a console with warnings that I don't care about
