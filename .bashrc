@@ -166,7 +166,7 @@ if [[ $HOSTNAME == "monkey" ]]; then
     [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
         . /usr/share/bash-completion/bash_completion
 
-    export SHC_CLIMATE_DATA_PATH="~/code/hccalc/shc_engine/climate_data/"
+    export SHC_CLIMATE_DATA_PATH=~/code/hccalc/shc_engine/climate_data
 fi
 
 # Arch Linux hosts
