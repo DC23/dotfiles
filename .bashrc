@@ -11,8 +11,6 @@ if [ -f "${HOME}/.bash_functions" ]; then
     source "${HOME}/.bash_functions"
 fi
 
-source "${HOME}/bin/fb-setbg"
-
 # environment variables
 HOSTNAME=`hostname`
 export PATH="~/bin:~/.local/bin:$PATH"
