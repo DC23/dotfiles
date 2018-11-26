@@ -167,6 +167,11 @@ if [[ $HOSTNAME == "monkey" ]]; then
         . /usr/share/bash-completion/bash_completion
 
     export SHC_CLIMATE_DATA_PATH=~/code/hccalc/shc_engine/climate_data
+
+    if command_exists keychain ; then
+        # make sure keychain is running
+        eval $(keychain --eval --quiet id_rsa)
+    fi
 fi
 
 # Arch Linux hosts
