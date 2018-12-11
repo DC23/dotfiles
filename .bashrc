@@ -13,7 +13,7 @@ fi
 
 # environment variables
 HOSTNAME=`hostname`
-export PATH="~/bin:~/.local/bin:$PATH"
+export PATH="${HOME}/bin:${HOME}/.local/bin:$PATH"
 export GREP_COLOR="1;33"
 export EDITOR="vim"
 
@@ -21,14 +21,14 @@ export ASKAP_DOCKER_BASE_DIR="${HOME}/code/askap-dockerfiles/"
 
 # scriptabit user plugin directory
 if [[ $HOSTNAME == "monkey" || $HOSTNAME == "ashok-bt" ]]; then
-    export SCRIPTABIT_USER_PLUGIN_DIR="~/Dropbox/scriptabit_plugins"
+    export SCRIPTABIT_USER_PLUGIN_DIR="${HOME}/Dropbox/scriptabit_plugins"
 elif [[ $HOSTNAME == "ERIS" ]]; then
     export SCRIPTABIT_USER_PLUGIN_DIR="/mnt/c/Users/Daniel/Dropbox/scriptabit_plugins"
 fi
 
 # for virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=~/code
+export PROJECT_HOME=${HOME}/code
 
 # some aliases
 alias ls='ls --group-directories-first --color=auto'
@@ -68,7 +68,7 @@ alias pandoc='docker run -ti --rm -v ${PWD}:/source --rm silviof/docker-pandoc'
 
 # lazy typist shortcuts for initialising the ASKAPsoft environment.
 if [ -f "${HOME}/code/askapsoft/initaskap.sh" ]; then
-    alias ia='source ~/code/askapsoft/initaskap.sh'
+    alias ia='source ${HOME}/code/askapsoft/initaskap.sh'
     alias cdsms='cd $ASKAP_ROOT/Code/Components/Services/skymodel/service'
 fi
 
@@ -115,14 +115,6 @@ if [[ $PAWSEY_OS = cle* ]]; then
     # Allow MPICH to fallback to 4k pages if large pages cannot be allocated
     # This is important for running some of the functional tests
     export MPICH_GNI_MALLOC_FALLBACK=enabled
-
-    #module load askapsoft
-    #module load askapdata
-    #module load askappipeline
-    #module load askapcli
-
-    #export LD_PRELOAD=$LD_PRELOAD:/pawsey/cle52up04/apps/gcc/4.9.0/python/2.7.10/lib/libpython2.7.so.1.0
-    #export LD_PRELOAD=$LD_PRELOAD:/opt/gcc/4.9.0/snos/lib64/libstdc++.so.6
 fi
 
 # Galaxy-ingest
@@ -135,21 +127,16 @@ if [[ $PAWSEY_OS = SLES12* ]]; then
     module load mvapich
     module load scons
     module load ant
-
-    #export LD_PRELOAD=$LD_PRELOAD:/pawsey/sles11sp4/apps/gcc/4.3.4/python/2.7.10/lib/libpython2.7.so.1.0
-    #export LD_PRELOAD=$LD_PRELOAD:/opt/gcc/4.3.4/snos/lib64/libstdc++.so.6
 fi
 
 # Debian Hosts
-if [[ $HOSTNAME == "monkey" ]]; then
+if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-29-cdc" ]]; then
     # virtualenv wrapper
     export PROJECT_HOME=$HOME/code
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
     if [ -f "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" ]; then
         source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
     fi
-
-    alias gvimb="gvim +'call Enbiggen()'"
 
     export HISTCONTROL=ignoreboth:erasedups
 
@@ -166,12 +153,16 @@ if [[ $HOSTNAME == "monkey" ]]; then
     [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
         . /usr/share/bash-completion/bash_completion
 
-    export SHC_CLIMATE_DATA_PATH=~/code/hccalc/shc_engine/climate_data
+    export SHC_CLIMATE_DATA_PATH=${HOME}/code/hccalc/shc_engine/climate_data
 
     if command_exists keychain ; then
         # make sure keychain is running
         eval $(keychain --eval --quiet id_rsa)
     fi
+fi
+
+if [[ $HOSTNAME == "sc-29-cdc" ]]; then
+    export LC_ALL="C.UTF-8"
 fi
 
 # Arch Linux hosts
@@ -245,7 +236,3 @@ fi
 
 # Subversion alias for quiet status listings that ignore unversioned files
 alias ssq="svn status -q"
-
-if [[ $HOSTNAME = pango ]]; then
-    setxkbmap -option "caps:swapescape"
-fi
