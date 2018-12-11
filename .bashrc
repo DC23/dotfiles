@@ -13,7 +13,7 @@ fi
 
 # environment variables
 HOSTNAME=`hostname`
-export PATH="${HOME}/bin:${HOME}/.local/bin:$PATH"
+#export PATH="${HOME}/bin:${HOME}/.local/bin:$PATH"
 export GREP_COLOR="1;33"
 export EDITOR="vim"
 
