@@ -245,7 +245,7 @@ if command_exists multitail ; then
 fi
 
 if detect_i3 ; then
-    $(HOME)/bin/i3-setroot
+    ~/bin/i3-setroot
 fi
 
 # Subversion alias for quiet status listings that ignore unversioned files
