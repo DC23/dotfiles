@@ -1,0 +1,2 @@
+#!/bin/sh
+xsetroot -bg "#222222" -fg "#333333" -mod 11 11

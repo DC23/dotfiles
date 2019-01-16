@@ -30,7 +30,7 @@ export EDITOR="vim"
 export ASKAP_DOCKER_BASE_DIR="${HOME}/code/askap-dockerfiles/"
 
 # scriptabit user plugin directory
-if [[ $HOSTNAME == "monkey" || $HOSTNAME == "ashok-bt" ]]; then
+if [[ $HOSTNAME == "monkey" ]]; then
     export SCRIPTABIT_USER_PLUGIN_DIR="${HOME}/Dropbox/scriptabit_plugins"
 elif [[ $HOSTNAME == "ERIS" ]]; then
     export SCRIPTABIT_USER_PLUGIN_DIR="/mnt/c/Users/Daniel/Dropbox/scriptabit_plugins"
@@ -244,8 +244,10 @@ if command_exists multitail ; then
     alias mtl="multitail -CS l4j --retry"
 fi
 
-if detect_i3 ; then
-    ~/bin/i3-setroot
+if [[ $HOSTNAME != "FREDDO-BM" ]]; then
+    if detect_i3 ; then 
+        ~/bin/i3-setroot
+    fi
 fi
 
 # Subversion alias for quiet status listings that ignore unversioned files
