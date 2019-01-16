@@ -244,7 +244,7 @@ if command_exists multitail ; then
     alias mtl="multitail -CS l4j --retry"
 fi
 
-if [[ $HOSTNAME != "FREDDO-BM" ]]; then
+if [[ $HOSTNAME =~ ^(FREDDO/-BM|ERIS)$ ]]; then 
     if detect_i3 ; then 
         ~/bin/i3-setroot
     fi
