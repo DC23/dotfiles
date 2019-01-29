@@ -42,7 +42,7 @@ export PROJECT_HOME=${HOME}/code
 
 # some aliases
 alias ls='ls --group-directories-first --color=auto'
-if [[ $HOSTNAME = CLOUD-KH || $HOSTNAME = Eris ]]; then
+if [[ $HOSTNAME = FREDDO-BM || $HOSTNAME = Eris ]]; then
     alias ls='ls --color=auto'
 fi
 
@@ -140,7 +140,7 @@ if [[ $PAWSEY_OS = SLES12* ]]; then
 fi
 
 # Debian Hosts
-if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-29-cdc" ]]; then
+if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "FREDDO-BM" ]]; then
     # virtualenv wrapper
     export PROJECT_HOME=$HOME/code
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
@@ -173,6 +173,17 @@ fi
 
 if [[ $HOSTNAME == "sc-29-cdc" ]]; then
     export LC_ALL="C.UTF-8"
+fi
+
+if [[ $HOSTNAME == "FREDDO-BM" ]]; then
+    shopt -s checkwinsize
+
+    export DISPLAY=:0
+
+    # set variable identifying the chroot you work in (used in the prompt below)
+    if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+        debian_chroot=$(cat /etc/debian_chroot)
+    fi
 fi
 
 # Arch Linux hosts
@@ -244,8 +255,8 @@ if command_exists multitail ; then
     alias mtl="multitail -CS l4j --retry"
 fi
 
-if [[ $HOSTNAME =~ ^(FREDDO/-BM|ERIS)$ ]]; then 
-    if detect_i3 ; then 
+if [[ $HOSTNAME =~ ^(FREDDO/-BM|ERIS)$ ]]; then
+    if detect_i3 ; then
         ~/bin/i3-setroot
     fi
 fi
