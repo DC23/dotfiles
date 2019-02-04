@@ -86,15 +86,6 @@ if command_exists pipenv ; then
     eval "$(pipenv --completion 2>/dev/null)"
 fi
 
-# pyenv configs
-if [ -d "${HOME}/.pyenv" ]; then
-    export PYENV_ROOT="$HOME/.pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
-    if command -v pyenv 1>/dev/null 2>&1; then
-        eval "$(pyenv init -)"
-    fi
-fi
-
 # load some default modules
 if [[ $HOSTNAME = bracewell || $HOSTNAME = pearcey-* || $HOSTNAME = ruby ]]; then
     module load vim
@@ -263,3 +254,12 @@ fi
 
 # Subversion alias for quiet status listings that ignore unversioned files
 alias ssq="svn status -q"
+
+# pyenv configs
+if [ -d "${HOME}/.pyenv" ]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    if command -v pyenv 1>/dev/null 2>&1; then
+        eval "$(pyenv init -)"
+    fi
+fi
