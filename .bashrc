@@ -175,6 +175,10 @@ if [[ $HOSTNAME == "FREDDO-BM" ]]; then
     if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
         debian_chroot=$(cat /etc/debian_chroot)
     fi
+
+    # Make sure Ruby gems are installed locally
+    export GEM_HOME="$HOME/gems"
+    export PATH="$GEM_HOME/bin:$PATH"
 fi
 
 # Arch Linux hosts
