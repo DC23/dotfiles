@@ -42,7 +42,7 @@ export PROJECT_HOME=${HOME}/code
 
 # some aliases
 alias ls='ls --group-directories-first --color=auto'
-if [[ $HOSTNAME = FREDDO-BM || $HOSTNAME = Eris ]]; then
+if [[ $HOSTNAME = Eris ]]; then
     alias ls='ls --color=auto'
 fi
 
