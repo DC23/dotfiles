@@ -131,7 +131,7 @@ if [[ $PAWSEY_OS = SLES12* ]]; then
 fi
 
 # Debian Hosts
-if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "FREDDO-BM" ]]; then
+if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "FREDDO-BM" || $HOSTNAME == "Eris" ]]; then
     # virtualenv wrapper
     export PROJECT_HOME=$HOME/code
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
@@ -166,7 +166,7 @@ if [[ $HOSTNAME == "sc-29-cdc" ]]; then
     export LC_ALL="C.UTF-8"
 fi
 
-if [[ $HOSTNAME == "FREDDO-BM" ]]; then
+if [[ $HOSTNAME == "FREDDO-BM" || $HOSTNAME == "Eris" ]]; then
     shopt -s checkwinsize
 
     export DISPLAY=:0
