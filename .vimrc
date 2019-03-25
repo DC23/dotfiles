@@ -415,10 +415,10 @@ if version >= 703
     let NERDTreeIgnore=[ '\.pyc', '\~$', '\.swo$', '\.swp$', '\.hg', '\.svn', '\.bzr', '\.os' ]
     let NERDChristmasTree = 1
     let NERDTreeShowLineNumbers = 1
-    let NERDTreeWinPos = "left"
+    let NERDTreeWinPos = "right"
     let NERDTreeWinSize = 45
     let NERDTreeMinimalUI = 1
-    let NERDTreeQuitOnOpen = 1
+    let NERDTreeQuitOnOpen = 0
 endif
 
 " Syntastic: runs source code through external syntax checkers
