@@ -132,6 +132,10 @@ fi
 
 # Debian Hosts
 if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "FREDDO-BM" || $HOSTNAME == "Eris" ]]; then
+
+    # Full update alias on Ubuntu
+    alias full_update='sudo apt update && sudo apt upgrade --yes && sudo apt autoremove --yes && sudo apt autoclean'
+
     # virtualenv wrapper
     export PROJECT_HOME=$HOME/code
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
