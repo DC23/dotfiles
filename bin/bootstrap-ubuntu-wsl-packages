@@ -5,34 +5,34 @@ OPTS="--yes"
 #OPTS=$OPTS" --dry-run"
 
 apt install $OPTS \
-	vim-gtk3 \
-	meld \
-	git \
+    vim-gtk3 \
+    meld \
+    git \
     chromium-browser \
     keychain \
-	python3-dev \
-	exuberant-ctags \
-	fonts-inconsolata \
-	ttf-dejavu \
-	fonts-liberation \
-	tree \
-	astyle
+    exuberant-ctags \
+    fonts-inconsolata \
+    ttf-dejavu \
+    fonts-liberation \
+    tree \
+    astyle \
+    python3-dev \
+    python3-pip \
+    python3-virtualenv \
+    virtualenvwrapper
 
 # Suggested packages
 apt install $OPTS \
     xdg-utils \
-	libdpkg-perl \
-	dpkg-dev \
-	glibc-doc \
-	db5.3-util \
-	libapache2-mod-svn \
-	subversion-tools
+    libdpkg-perl \
+    dpkg-dev \
+    glibc-doc \
+    db5.3-util \
+    libapache2-mod-svn \
+    subversion-tools
 
 # XFCE
 apt install $OPTS \
     xfce4 \
     xfce4-whiskermenu-plugin \
     arc-theme
-
-# extra dependencies for scipy
-# apt-get install -y libblas-dev liblapack-dev libjpeg62-turbo-dev
