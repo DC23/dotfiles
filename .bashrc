@@ -183,6 +183,8 @@ if [[ $HOSTNAME == "FREDDO-BM" || $HOSTNAME == "Eris" ]]; then
     # Make sure Ruby gems are installed locally
     export GEM_HOME="$HOME/gems"
     export PATH="$GEM_HOME/bin:$PATH"
+
+    alias code="code-insiders"
 fi
 
 # Arch Linux hosts
