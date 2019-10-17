@@ -164,6 +164,10 @@ if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-25-mel" || $HOSTNAME == "sc-29-c
         # make sure keychain is running
         eval $(keychain --eval --quiet id_rsa)
     fi
+
+    # Make sure Ruby gems are installed locally
+    export GEM_HOME="$HOME/gems"
+    export PATH="$GEM_HOME/bin:$PATH"
 fi
 
 if [[ $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "sc-25-mel" ]]; then
