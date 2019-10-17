@@ -131,7 +131,7 @@ if [[ $PAWSEY_OS = SLES12* ]]; then
 fi
 
 # Debian Hosts
-if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "FREDDO-BM" || $HOSTNAME == "Eris" ]]; then
+if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-25-mel" || $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "FREDDO-BM" || $HOSTNAME == "Eris" ]]; then
 
     # Full update alias on Ubuntu
     alias full_update='sudo apt update && sudo apt upgrade --yes && sudo apt autoremove --yes && sudo apt autoclean'
@@ -166,7 +166,7 @@ if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "FREDDO-
     fi
 fi
 
-if [[ $HOSTNAME == "sc-29-cdc" ]]; then
+if [[ $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "sc-25-mel" ]]; then
     export LC_ALL="C.UTF-8"
 fi
 
