@@ -174,6 +174,7 @@ if [[ $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "sc-25-mel" ]]; then
     export LC_ALL="C.UTF-8"
 fi
 
+# WSL systems
 if [[ $HOSTNAME == "FREDDO-BM" || $HOSTNAME == "Eris" ]]; then
     shopt -s checkwinsize
 
@@ -184,9 +185,10 @@ if [[ $HOSTNAME == "FREDDO-BM" || $HOSTNAME == "Eris" ]]; then
         debian_chroot=$(cat /etc/debian_chroot)
     fi
 
-    # Make sure Ruby gems are installed locally
-    export GEM_HOME="$HOME/gems"
-    export PATH="$GEM_HOME/bin:$PATH"
+    # Note: Windows Subsystem for Linux does not currently apply umask properly.
+    if [[ "$(umask)" = "0000" ]]; then
+        umask 0022
+    fi
 fi
 
 # Arch Linux hosts
