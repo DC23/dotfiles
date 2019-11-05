@@ -938,3 +938,7 @@ autocmd FocusLost * :wa
 
 " Override the default mapping of .md to Modula2
 autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+" Snakemake syntax
+autocmd BufNewFile,BufRead Snakefile set syntax=snakemake
+autocmd BufNewFile,BufRead *.snake set syntax=snakemake
