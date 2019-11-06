@@ -42,10 +42,6 @@ export PROJECT_HOME=${HOME}/code
 
 # some aliases
 alias ls='ls --group-directories-first --color=auto'
-if [[ $HOSTNAME = Eris ]]; then
-    alias ls='ls --color=auto'
-fi
-
 alias la='ls -Ah'
 alias ll='ls -alh'
 alias l='ls -lh'
