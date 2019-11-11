@@ -91,6 +91,10 @@ if [[ $HOSTNAME = bracewell || $HOSTNAME = pearcey-* || $HOSTNAME = ruby ]]; the
     alias lp36='module load python/3.6.1;source /apps/python/3.6.1/bin/virtualenvwrapper_lazy.sh;which python'
     alias lp37='module load python/3.7.2;source /apps/python/3.7.2/bin/virtualenvwrapper_lazy.sh;which python'
 
+    # Make sure Ruby gems are installed locally
+    export GEM_HOME="$HOME/gems"
+    export PATH="$GEM_HOME/bin:$PATH"
+
     #if [[ $HOSTNAME = bragg-l || $HOSTNAME = bragg-l-test || $HOSTNAME = burnet-login ]]; then
         ## For testing the netcdf-profiling code, I need the libioprof.so location in LD_LIBRARY_PATH
         #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/projects/netcdf-profiling/bin/ioprof/lib
