@@ -15,26 +15,21 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-
-# set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
 # environment variables
 HOSTNAME=`hostname`
-#export PATH="${HOME}/bin:${HOME}/.local/bin:$PATH"
 export GREP_COLOR="1;33"
 export EDITOR="vim"
 
-export ASKAP_DOCKER_BASE_DIR="${HOME}/code/askap-dockerfiles/"
-
 # scriptabit user plugin directory
-if [[ $HOSTNAME == "monkey" ]]; then
-    export SCRIPTABIT_USER_PLUGIN_DIR="${HOME}/Dropbox/scriptabit_plugins"
-elif [[ $HOSTNAME == "ERIS" ]]; then
-    export SCRIPTABIT_USER_PLUGIN_DIR="/mnt/c/Users/Daniel/Dropbox/scriptabit_plugins"
-fi
+#if [[ $HOSTNAME == "monkey" ]]; then
+    #export SCRIPTABIT_USER_PLUGIN_DIR="${HOME}/Dropbox/scriptabit_plugins"
+#elif [[ $HOSTNAME == "ERIS" ]]; then
+    #export SCRIPTABIT_USER_PLUGIN_DIR="/mnt/c/Users/Daniel/Dropbox/scriptabit_plugins"
+#fi
 
 # for virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
@@ -56,28 +51,17 @@ alias egrep='grep -E --color=auto'
 alias fgrep='grep -F --color=auto'
 alias free='free -m'
 alias quota='quota -s'
-# Git colorisation escape codes don't work with the pager
-alias git='git --no-pager'
-alias ipyqt='ipython qtconsole --colors=linux --pylab=inline'
-alias ipyqtw='ipython qtconsole --pylab=inline'
+alias git='git --no-pager'  # Git colorisation escape codes don't work with the pager
 alias gst='git status'
 alias gpr='git pull --rebase'
-alias gc='git commit'
 alias gcm='git commit -m'
-alias gcam='git commit -am'
-alias ga='git add'
 alias gaa='git add --all'
 alias gps='git push'
 
 # alias `pandoc` to the docker container
-alias pandoc='docker run -ti --rm -v ${PWD}:/source --rm silviof/docker-pandoc'
+#alias pandoc='docker run -ti --rm -v ${PWD}:/source --rm silviof/docker-pandoc'
 
-# lazy typist shortcuts for initialising the ASKAPsoft environment.
-if [ -f "${HOME}/code/askapsoft/initaskap.sh" ]; then
-    alias ia='source ${HOME}/code/askapsoft/initaskap.sh'
-    alias cdsms='cd $ASKAP_ROOT/Code/Components/Services/skymodel/service'
-fi
-
+# Pipenv autocompletion
 if command_exists pipenv ; then
     eval "$(pipenv --completion 2>/dev/null)"
 fi
@@ -138,19 +122,12 @@ if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-25-mel" || $HOSTNAME == "sc-29-c
     alias full_update='sudo apt update && sudo apt upgrade --yes && sudo apt autoremove --yes && sudo apt autoclean'
 
     # virtualenv wrapper
-    export PROJECT_HOME=$HOME/code
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
     if [ -f "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" ]; then
         source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
     fi
 
     export HISTCONTROL=ignoreboth:erasedups
-
-    CONDA_INSTALL_DIR=$HOME/bin/anaconda
-    CONDA_INIT=$CONDA_INSTALL_DIR/etc/profile.d/conda.sh
-    if [ -f $CONDA_INIT ]; then
-        . $CONDA_INIT
-    fi
 
     export CC=gcc
 
@@ -195,16 +172,8 @@ fi
 # Arch Linux hosts
 if [[ $HOSTNAME == "scratch" || $HOSTNAME == "belkar" ]]; then
     # virtualenv wrapper
-    export PROJECT_HOME=$HOME/code
-    VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
     if [ -f "/usr/bin/virtualenvwrapper.sh" ]; then
         source /usr/bin/virtualenvwrapper.sh
-    fi
-
-    CONDA_INSTALL_DIR=$HOME/bin/anaconda
-    CONDA_INIT=$CONDA_INSTALL_DIR/etc/profile.d/conda.sh
-    if [ -f $CONDA_INIT ]; then
-        . $CONDA_INIT
     fi
 
     alias pacman="pacman --color=always"
@@ -251,24 +220,11 @@ if command_exists R ; then
     alias R="$(which R) --no-save"
 fi
 
-if command_exists fortune ; then
-    echo
-    fortune
-    echo
-fi
-
-if command_exists multitail ; then
-    alias mtl="multitail -CS l4j --retry"
-fi
-
 if [[ $HOSTNAME =~ ^(FREDDO/-BM|ERIS)$ ]]; then
     if detect_i3 ; then
         ~/bin/i3-setroot
     fi
 fi
-
-# Subversion alias for quiet status listings that ignore unversioned files
-alias ssq="svn status -q"
 
 # pyenv configs
 if [ -d "${HOME}/.pyenv" ]; then
