@@ -122,7 +122,7 @@ if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-25-mel" || $HOSTNAME == "sc-29-c
     alias full_update='sudo apt update && sudo apt upgrade --yes && sudo apt autoremove --yes && sudo apt autoclean'
 
     # virtualenv wrapper
-    VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+    VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
     if [ -f "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" ]; then
         source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
     fi
