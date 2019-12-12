@@ -653,7 +653,7 @@ if has('gui_running')
         set guifont=Consolas:h10:cANSI
     elseif s:is_unix
         "set guifont=Liberation\ Mono\ 10
-        set guifont=Monospace\ 10
+        set guifont=Monospace\ 12
     endif
 endif
 
