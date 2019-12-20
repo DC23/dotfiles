@@ -234,3 +234,7 @@ if [ -d "${HOME}/.pyenv" ]; then
         eval "$(pyenv init -)"
     fi
 fi
+if [[ $HOSTNAME = FREDDO-BM ]]; then
+    export PATH=$PATH:~/Anaconda3/Scripts
+    source activate
+fi
