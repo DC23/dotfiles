@@ -291,6 +291,9 @@ Plugin 'guns/xterm-color-table.vim'
 " works with neosnippet
 "Plugin 'honza/vim-snippets'
 
+" Snakemake syntax support
+Plugin 'ibab/vim-snakemake'
+
 " Buffergator: list, select and switch between buffers
 " F5 to open buffer window
 " o: open buffer in current window
