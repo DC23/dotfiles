@@ -122,7 +122,7 @@ if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-25-mel" || $HOSTNAME == "sc-29-c
     alias full_update='sudo apt update && sudo apt upgrade --yes && sudo apt autoremove --yes && sudo apt autoclean'
 
     # virtualenv wrapper
-    VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+    VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
     if [ -f "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" ]; then
         source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
     fi
@@ -196,6 +196,8 @@ export GCC_COLORS=1
 # Alias some programs so that they don't spam a console with warnings that I don't care about
 if command_exists gvim ; then
     alias gvim-update='gvim +PluginClean +PluginInstall! +qall'
+fi
+if command_exists vim ; then
     alias vim-update='vim +PluginClean +PluginInstall! +qall'
 fi
 
@@ -234,7 +236,7 @@ if [ -d "${HOME}/.pyenv" ]; then
         eval "$(pyenv init -)"
     fi
 fi
-if [[ $HOSTNAME = FREDDO-BM ]]; then
-    export PATH=$PATH:~/Anaconda3/Scripts
-    source activate
-fi
+# if [[ $HOSTNAME = FREDDO-BM ]]; then
+#     export PATH=$PATH:~/Anaconda3/Scripts
+#     source activate
+# fi
