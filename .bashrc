@@ -116,7 +116,7 @@ if [[ $PAWSEY_OS = SLES12* ]]; then
 fi
 
 # Debian Hosts
-if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-25-mel" || $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "mf-04-cdc" || $HOSTNAME == "FREDDO-BM" || $HOSTNAME == "Eris" ]]; then
+if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-25-mel" || $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "mf-04-cdc" || $HOSTNAME == "FREDDO-BM" || $HOSTNAME == "DESKTOP-UVGTNQ3" ]]; then
 
     # Full update alias on Ubuntu
     alias full_update='sudo apt update && sudo apt upgrade --yes && sudo apt autoremove --yes && sudo apt autoclean'
@@ -136,8 +136,6 @@ if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-25-mel" || $HOSTNAME == "sc-29-c
     [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
         . /usr/share/bash-completion/bash_completion
 
-    export SHC_CLIMATE_DATA_PATH=${HOME}/code/hccalc/shc_engine/climate_data
-
     if command_exists keychain ; then
         # make sure keychain is running
         eval $(keychain --eval --quiet id_rsa)
@@ -153,7 +151,7 @@ if [[ $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "sc-25-mel" ]]; then
 fi
 
 # WSL systems
-if [[ $HOSTNAME == "FREDDO-BM" || $HOSTNAME == "Eris" ]]; then
+if [[ $HOSTNAME == "FREDDO-BM" || $HOSTNAME == "DESKTOP-UVGTNQ3" ]]; then
     shopt -s checkwinsize
 
     export DISPLAY=:0
