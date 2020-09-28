@@ -126,6 +126,9 @@ if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-25-mel" || $HOSTNAME == "sc-29-c
     if [ -f "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" ]; then
         source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
     fi
+    if [ -f "$HOME/.local/bin/virtualenvwrapper.sh" ]; then
+        source $HOME/.local/bin/virtualenvwrapper.sh
+    fi
 
     export HISTCONTROL=ignoreboth:erasedups
 
