@@ -34,6 +34,7 @@ export EDITOR="vim"
 # for virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=${HOME}/code
+export PIPENV_VERBOSITY=-1
 
 # some aliases
 alias ls='ls --group-directories-first --color=auto'
