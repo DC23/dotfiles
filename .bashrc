@@ -125,9 +125,11 @@ if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-25-mel" || $HOSTNAME == "sc-29-c
     # virtualenv wrapper
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
     if [ -f "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" ]; then
+        echo Using /usr/share/virtualenvwrapper/virtualenvwrapper.sh
         source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
     fi
     if [ -f "$HOME/.local/bin/virtualenvwrapper.sh" ]; then
+        echo Using $HOME/.local.bin/virtualenvwrapper.sh
         source $HOME/.local/bin/virtualenvwrapper.sh
     fi
 
