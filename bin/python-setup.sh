@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo '* make sure the system packages are present:'
-if sudo apt install python3 python3-dev python3-pip ; then
+if sudo apt install --yes python3 python3-dev python3-pip ; then
 	echo System packages installed OK
 else
 	echo System package install failed
