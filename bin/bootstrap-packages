@@ -1,8 +1,0 @@
-#!/bin/sh
-pacman -Syyu
-
-# Core packages
-pacman --needed -S git meld gvim openssh p7zip zip unzip tree tk rsync wget java-environment java-runtime perl-libwww perl-lwp-protocol-https perl-term-readkey subversion wxgtk mpdecimal ghostscript texlive-bin xsel texlive-core ipython dialog perl-tk psutils yaourt mate-themes xscreensaver fortune-mod xfce4-goodies reflector file-roller autopep8 evince texlive-latexextra ctags jupyter mathjax qt5-svg texlive-most texmaker xorg-xkill ttf-dejavu pandoc conky wget
-
-# Python packages
-#pacman --needed -S python-pip python-virtualenv python-virtualenvwrapper python-numpy python-scipy python-matplotlib python-pandas python-bottleneck python-numexpr python-nose python-pillow python-gobject python-cairocffi python-pyqt4 python-tornado python-pytables python-statsmodels python-openpyxl python-xlsxwriter python-xlrd python-beautifulsoup4 python-lxml python-xcffib python-chardet ipython python-ipdb python-pylint python-rope python-psutil python-h5py python-sympy python-pyqt5 python-sip python-pint python-pandas-datareader python-blosc python-iso8601 jupyter-notebook jupyter-nbconvert
