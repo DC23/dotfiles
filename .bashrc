@@ -150,6 +150,10 @@ if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-25-mel" || $HOSTNAME == "sc-29-c
     # Make sure Ruby gems are installed locally
     export GEM_HOME="$HOME/gems"
     export PATH="$GEM_HOME/bin:$PATH"
+
+    # User and group ID variables used in the CSDB docker config
+    #export UID=`id -u`
+    export GID=`id -g`
 fi
 
 if [[ $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "sc-25-mel" ]]; then
@@ -170,28 +174,6 @@ if [[ $HOSTNAME == "FREDDO-BM" || $HOSTNAME == "DESKTOP-UVGTNQ3" ]]; then
     # Note: Windows Subsystem for Linux does not currently apply umask properly.
     if [[ "$(umask)" = "0000" ]]; then
         umask 0022
-    fi
-fi
-
-# Arch Linux hosts
-if [[ $HOSTNAME == "scratch" || $HOSTNAME == "belkar" ]]; then
-    # virtualenv wrapper
-    if [ -f "/usr/bin/virtualenvwrapper.sh" ]; then
-        source /usr/bin/virtualenvwrapper.sh
-    fi
-
-    alias pacman="pacman --color=always"
-    alias gvim="gvim +'call Enbiggen()'"
-    export HISTCONTROL=ignoreboth:erasedups
-    export OMP_NUM_THREADS=2
-    export OPENCV_HOME=/usr/include
-    export BOOST_HOME=/usr/include
-    export BOOST_ROOT=/usr/lib/
-    export CC=gcc
-
-    if command_exists keychain ; then
-        # make sure keychain is running
-        eval $(keychain --eval --quiet id_rsa)
     fi
 fi
 
