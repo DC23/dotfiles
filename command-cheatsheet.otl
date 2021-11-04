@@ -9,49 +9,49 @@ Arch Linux
 Docker
 	Images
 		List Primary images
-			sudo docker image ls
+			docker image ls
 		List all
-			sudo docker image ls -a
+			docker image ls -a
 		List dangling
-			sudo docker image ls -f dangling=true
+			docker image ls -f dangling=true
 		Remove
-			sudo docker rmi <image>
+			docker rmi <image>
 		Remove dangling
-			sudo docker rmi $(sudo docker images -f dangling=true -q)
+			docker rmi $(docker images -f dangling=true -q)
 		Remove all
-			sudo docker rmi $(sudo docker images -a -q)
+			docker rmi $(docker images -a -q)
 	Containers
 		List
-			sudo docker ps
+			docker ps
 		List all
-			sudo docker ps -a
+			docker ps -a
 		List exited
-			sudo docker ps -a -f status=exited
+			docker ps -a -f status=exited
 		Remove exited
-			sudo docker rm $(sudo docker ps -a -f status=exited -q)
+			docker rm $(docker ps -a -f status=exited -q)
 		Remove all
-			sudo docker stop $(sudo docker ps -a -q)
+			docker stop $(docker ps -a -q)
 			: stop all containers
-			sudo docker rm $(sudo docker ps -a -q)
+			docker rm $(docker ps -a -q)
 			: remove them
 	Volumes
 		List
-			sudo docker volume ls
+			docker volume ls
 		Remove
-			sudo docker volume rm <name>
+			docker volume rm <name>
 		List dangling
-			sudo docker volume ls -f dangling=true
+			docker volume ls -f dangling=true
 		Remove dangling
-			sudo docker volume rm $(sudo docker volume ls -f dangling=true -q)
+			docker volume rm $(docker volume ls -f dangling=true -q)
 	System
 		Show disk usage
-			sudo docker system df -v
+			docker system df -v
 		Get real-time events
-			sudo docker system events
+			docker system events
 		Remove unused data
 			dangling images & stopped containers
-				sudo docker system prune
+				docker system prune
 			all unused images, not just dangling
-				sudo docker system prune --all
+				docker system prune --all
 			prune volumes
-				sudo docker system prune --volumes
+				docker system prune --volumes
