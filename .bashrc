@@ -150,10 +150,6 @@ if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-25-mel" || $HOSTNAME == "sc-29-c
     # Make sure Ruby gems are installed locally
     export GEM_HOME="$HOME/gems"
     export PATH="$GEM_HOME/bin:$PATH"
-
-    # User and group ID variables used in the CSDB docker config
-    #export UID=`id -u`
-    export GID=`id -g`
 fi
 
 if [[ $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "sc-25-mel" ]]; then
