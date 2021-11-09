@@ -12,7 +12,6 @@ echo
 if [ -d "$HOME/.pyenv" ]; then
 	echo '* pyenv already installed, updating:'
 	cd .pyenv && git pull
-
 else
 	echo '* installing latest pyenv from GitHub:'
 	if git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv ; then
