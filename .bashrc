@@ -58,6 +58,7 @@ alias gpr='git pull --rebase'
 alias gcm='git commit -m'
 alias gaa='git add --all'
 alias gps='git push'
+alias gpst='git push && git push --tags'
 
 # alias `pandoc` to the docker container
 #alias pandoc='docker run -ti --rm -v ${PWD}:/source --rm silviof/docker-pandoc'
