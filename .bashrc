@@ -60,65 +60,24 @@ alias gaa='git add --all'
 alias gps='git push'
 alias gpst='git push && git push --tags'
 
-# alias `pandoc` to the docker container
-#alias pandoc='docker run -ti --rm -v ${PWD}:/source --rm silviof/docker-pandoc'
-
 # Pipenv autocompletion
 if command_exists pipenv ; then
     eval "$(pipenv --completion 2>/dev/null)"
 fi
 
 # load some default modules
-if [[ $HOSTNAME = bracewell || $HOSTNAME = pearcey-* || $HOSTNAME = ruby ]]; then
+# if [[ $HOSTNAME = bracewell || $HOSTNAME = pearcey-* || $HOSTNAME = ruby ]]; then
+if [[ $HOSTNAME = bracewell ]]; then
     module load vim
     module load git
-
-    alias lp2='module load python/2.7.11;source /apps/python/2.7.11/bin/virtualenvwrapper_lazy.sh;which python'
-    alias lp36='module load python/3.6.1;source /apps/python/3.6.1/bin/virtualenvwrapper_lazy.sh;which python'
-    alias lp37='module load python/3.7.2;source /apps/python/3.7.2/bin/virtualenvwrapper_lazy.sh;which python'
 
     # Make sure Ruby gems are installed locally
     export GEM_HOME="$HOME/gems"
     export PATH="$GEM_HOME/bin:$PATH"
-
-    #if [[ $HOSTNAME = bragg-l || $HOSTNAME = bragg-l-test || $HOSTNAME = burnet-login ]]; then
-        ## For testing the netcdf-profiling code, I need the libioprof.so location in LD_LIBRARY_PATH
-        #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/projects/netcdf-profiling/bin/ioprof/lib
-    #fi
-fi
-
-# Galaxy nodes
-if [[ $PAWSEY_OS = cle* ]]; then
-    module swap PrgEnv-cray PrgEnv-gnu
-    module swap gcc/7.2.0 gcc/4.9.3
-    module use /group/askap/modulefiles
-
-    # default Python is too old
-    module load python/2.7.14
-
-    # Building askapsoft requires Java
-    module load java
-    export JAVA_HOME=$JAVA_PATH
-
-    # Allow MPICH to fallback to 4k pages if large pages cannot be allocated
-    # This is important for running some of the functional tests
-    export MPICH_GNI_MALLOC_FALLBACK=enabled
-fi
-
-# Galaxy-ingest
-if [[ $PAWSEY_OS = SLES12* ]]; then
-    module load sandybridge
-    module load python/2.7.10
-    module load java
-    export JAVA_HOME=$JAVA_PATH
-    module load gcc/4.8.5
-    module load mvapich
-    module load scons
-    module load ant
 fi
 
 # Debian Hosts
-if [[ $HOSTNAME == "monkey" || $HOSTNAME == "sc-25-mel" || $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "mf-04-cdc" || $HOSTNAME == "FREDDO-BM" || $HOSTNAME == "DESKTOP-UVGTNQ3" ]]; then
+if [[ $HOSTNAME == "sc-25-mel" || $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "mf-04-cdc" || $HOSTNAME == "ANNISTON-BM" || $HOSTNAME == "DESKTOP-UVGTNQ3" ]]; then
 
     # Full update alias on Ubuntu
     alias full_update='sudo apt update && sudo apt upgrade --yes && sudo apt autoremove --yes && sudo apt autoclean'
@@ -158,7 +117,7 @@ if [[ $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "sc-25-mel" ]]; then
 fi
 
 # WSL systems
-if [[ $HOSTNAME == "FREDDO-BM" || $HOSTNAME == "DESKTOP-UVGTNQ3" ]]; then
+if [[ $HOSTNAME == "ANNISTON-BM" || $HOSTNAME == "DESKTOP-UVGTNQ3" ]]; then
     shopt -s checkwinsize
 
     export DISPLAY=:0
