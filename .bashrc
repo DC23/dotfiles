@@ -23,6 +23,7 @@ fi
 HOSTNAME=`hostname`
 export GREP_COLOR="1;33"
 export EDITOR="vim"
+export TEXMFHOME=$HOME/.texmf/
 
 # scriptabit user plugin directory
 #if [[ $HOSTNAME == "monkey" ]]; then
