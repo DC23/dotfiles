@@ -78,7 +78,7 @@ if [[ $HOSTNAME = bracewell ]]; then
 fi
 
 # Debian Hosts
-if [[ $HOSTNAME == "sc-25-mel" || $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "mf-04-cdc" || $HOSTNAME == "ANNISTON-BM" || $HOSTNAME == "DESKTOP-UVGTNQ3" ]]; then
+if [[ $HOSTNAME == "sc-25-mel" || $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "mf-04-cdc" || $HOSTNAME == "ANNISTON-BM" || $HOSTNAME == "Eris" ]]; then
 
     # Full update alias on Ubuntu
     alias full_update='sudo apt update && sudo apt upgrade --yes && sudo apt autoremove --yes && sudo apt autoclean'
