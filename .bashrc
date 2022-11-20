@@ -25,13 +25,6 @@ export GREP_COLOR="1;33"
 export EDITOR="vim"
 export TEXMFHOME=$HOME/.texmf/
 
-# scriptabit user plugin directory
-#if [[ $HOSTNAME == "monkey" ]]; then
-    #export SCRIPTABIT_USER_PLUGIN_DIR="${HOME}/Dropbox/scriptabit_plugins"
-#elif [[ $HOSTNAME == "ERIS" ]]; then
-    #export SCRIPTABIT_USER_PLUGIN_DIR="/mnt/c/Users/Daniel/Dropbox/scriptabit_plugins"
-#fi
-
 # for virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=${HOME}/code
@@ -66,56 +59,36 @@ if command_exists pipenv ; then
     eval "$(pipenv --completion 2>/dev/null)"
 fi
 
-# load some default modules
-# if [[ $HOSTNAME = bracewell || $HOSTNAME = pearcey-* || $HOSTNAME = ruby ]]; then
-if [[ $HOSTNAME = bracewell ]]; then
-    module load vim
-    module load git
+# Full update alias 
+alias full_update='sudo apt update && sudo apt upgrade --yes && sudo apt autoremove --yes && sudo apt autoclean'
 
-    # Make sure Ruby gems are installed locally
-    export GEM_HOME="$HOME/gems"
-    export PATH="$GEM_HOME/bin:$PATH"
+# virtualenv wrapper
+VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+if [ -f "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" ]; then
+    echo Using /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+fi
+if [ -f "$HOME/.local/bin/virtualenvwrapper.sh" ]; then
+    echo Using $HOME/.local.bin/virtualenvwrapper.sh
+    source $HOME/.local/bin/virtualenvwrapper.sh
 fi
 
-# Debian Hosts
-if [[ $HOSTNAME == "sc-25-mel" || $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "mf-04-cdc" || $HOSTNAME == "ANNISTON-BM" || $HOSTNAME == "Eris" ]]; then
+export HISTCONTROL=ignoreboth:erasedups
+export CC=gcc
 
-    # Full update alias on Ubuntu
-    alias full_update='sudo apt update && sudo apt upgrade --yes && sudo apt autoremove --yes && sudo apt autoclean'
+# Use bash-completion, if available. This is not enabled by default
+# on LMDE or Debian.
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
 
-    # virtualenv wrapper
-    VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-    if [ -f "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" ]; then
-        echo Using /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-        source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-    fi
-    if [ -f "$HOME/.local/bin/virtualenvwrapper.sh" ]; then
-        echo Using $HOME/.local.bin/virtualenvwrapper.sh
-        source $HOME/.local/bin/virtualenvwrapper.sh
-    fi
-
-    export HISTCONTROL=ignoreboth:erasedups
-
-    export CC=gcc
-
-    # Use bash-completion, if available. This is not enabled by default
-    # on LMDE or Debian.
-    [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
-        . /usr/share/bash-completion/bash_completion
-
-    if command_exists keychain ; then
-        # make sure keychain is running
-        eval $(keychain --eval --quiet id_rsa)
-    fi
-
-    # Make sure Ruby gems are installed locally
-    export GEM_HOME="$HOME/gems"
-    export PATH="$GEM_HOME/bin:$PATH"
+if command_exists keychain ; then
+    # make sure keychain is running
+    eval $(keychain --eval --quiet id_rsa)
 fi
 
-if [[ $HOSTNAME == "sc-29-cdc" || $HOSTNAME == "sc-25-mel" ]]; then
-    export LC_ALL="C.UTF-8"
-fi
+# Make sure Ruby gems are installed locally
+export GEM_HOME="$HOME/gems"
+export PATH="$GEM_HOME/bin:$PATH"
 
 # WSL systems
 if [[ $HOSTNAME == "ANNISTON-BM" || $HOSTNAME == "DESKTOP-UVGTNQ3" ]]; then
@@ -165,12 +138,6 @@ if command_exists R ; then
     alias R="$(which R) --no-save"
 fi
 
-if [[ $HOSTNAME =~ ^(FREDDO/-BM|ERIS)$ ]]; then
-    if detect_i3 ; then
-        ~/bin/i3-setroot
-    fi
-fi
-
 # pyenv configs
 if [ -d "${HOME}/.pyenv" ]; then
     export PYENV_ROOT="$HOME/.pyenv"
@@ -179,7 +146,3 @@ if [ -d "${HOME}/.pyenv" ]; then
         eval "$(pyenv init -)"
     fi
 fi
-# if [[ $HOSTNAME = FREDDO-BM ]]; then
-#     export PATH=$PATH:~/Anaconda3/Scripts
-#     source activate
-# fi
