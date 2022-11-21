@@ -23,7 +23,7 @@ fi
 HOSTNAME=`hostname`
 export GREP_COLOR="1;33"
 export EDITOR="vim"
-export TEXMFHOME=$HOME/.texmf/
+export TEXMFHOME=$HOME/.texmf
 
 # for virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
