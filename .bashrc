@@ -19,6 +19,11 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# Add local Rust toolchain to path
+if [ -d "$HOME/.cargo/bin" ] ; then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 # environment variables
 HOSTNAME=`hostname`
 export GREP_COLOR="1;33"
@@ -146,3 +151,4 @@ if [ -d "${HOME}/.pyenv" ]; then
         eval "$(pyenv init -)"
     fi
 fi
+ 
