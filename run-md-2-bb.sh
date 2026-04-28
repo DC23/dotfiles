@@ -1,8 +1,8 @@
 #!/bin/bash
 
 RAVENS_CALL="/mnt/c/Users/juggl/OneDrive/Documents/Obsidian/RPG/Campaigns/Ravens Call"
-START=33
-END=34
+START=30
+END=37
 OFFSET=-3
 
 cd "$RAVENS_CALL"

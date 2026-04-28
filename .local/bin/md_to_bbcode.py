@@ -222,6 +222,9 @@ def parse_scene_file(text: str) -> dict:
         'bookkeeping': '',
     }
 
+    text = re.sub(r'<br\s*/?>', ' ', text)  # replace <br> with double space
+    text = re.sub(r'<[^>]+>', '', text)       # strip remaining HTML tags
+
     # Extract H1 (first line starting with a single #)
     h1_match = re.match(r'^# (.+)$', text, re.MULTILINE)
     if h1_match:
