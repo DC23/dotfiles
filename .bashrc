@@ -29,6 +29,11 @@ if [ -d "$HOME/.npm-global" ] ; then
     PATH="$HOME/.npm-global/bin:$PATH"
 fi
 
+# source local bashrc if there is one
+if [ -f "$HOME/.bashrc_local" ] ; then
+    source "$HOME/.bashrc_local"
+fi
+
 # environment variables
 HOSTNAME=`hostname`
 export GREP_COLORS='mt=1;33'
