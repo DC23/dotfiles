@@ -24,9 +24,15 @@ if [ -d "$HOME/.cargo/bin" ] ; then
     PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+# Add local npm package directory to path if it exists
+if [ -d "$HOME/.npm-global" ] ; then
+    PATH="$HOME/.npm-global/bin:$PATH"
+fi
+
 # environment variables
 HOSTNAME=`hostname`
-export GREP_COLOR="1;33"
+export GREP_COLORS='mt=1;33'
+# export GREP_COLOR="1;33"
 export EDITOR="vim"
 export TEXMFHOME=$HOME/.texmf
 

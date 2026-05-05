@@ -295,9 +295,9 @@ def assemble_bbcode(parsed: dict, session_number: int, filename_stem: str = '') 
     # Use full H1 as title; fall back to filename stem if H1 is absent
     scene_title = extract_title_from_h1(parsed['h1_raw']) if parsed['h1_raw'] else filename_stem
     if scene_title:
-        title_line = f"The Raven's Call: Session {session_number} - {scene_title}"
+        title_line = f"The Raven's Call: Scene {session_number} - {scene_title}"
     else:
-        title_line = f"The Raven's Call: Session {session_number}"
+        title_line = f"The Raven's Call: Scene {session_number}"
 
     # --- Metadata fields ---
     def meta_val(key):
@@ -319,8 +319,8 @@ def assemble_bbcode(parsed: dict, session_number: int, filename_stem: str = '') 
 
     output = f"""\
 [b][size=18]{title_line}[/size][/b]
-[b]Last Session: [/b]-
-[b]Next Session: [/b]-
+[b]Last Scene: [/b]-
+[b]Next Scene: [/b]-
 {char_sheets_line}
 [b]Mythic Scene Expectation: [/b]{expectation}
 [b]Chaos Factor: [/b]{chaos}
